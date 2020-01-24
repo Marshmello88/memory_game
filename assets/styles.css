@@ -1,12 +1,61 @@
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
 body {
 font-family: 'Press Start 2P', cursive;
-  background: #fff;
+  background: black;
+}
+
+h1 {
+    color: white;
+}
+
+.gameBoard {
+max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* for the 3d flip effect*/
+    perspective: 1000px;
+}
+
+
+.front {
+    background-image: url(assets/img/question.jpg);
+}
+
+.card,
+.back,
+.front {
+  height: 150px;
+  width: 150px;
+}
+
+.card {
+    position: relative;
+    /*to position the cards in the 3D space created in the parent*/
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.back,
+.front {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.back {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* adding a click effect*/
+
+.card:active {
+   transform: scale(0.97);
+   transition: transform .2s;
+   border: 4px solid #00FFFF;
+ }
+
+ .card.display {
+  transform: rotateY(180deg);
 }
