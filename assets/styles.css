@@ -19,8 +19,10 @@ max-width: 960px;
 
 
 .front {
-    background-image: url(assets/img/question.jpg);
+   background: url('img/question.png') no-repeat center center;
+   background-size: contain;
 }
+
 
 .card,
 .back,
@@ -46,6 +48,7 @@ max-width: 960px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
+  transform: rotateY(180deg);
 }
 
 /* adding a click effect*/
@@ -53,9 +56,16 @@ max-width: 960px;
 .card:active {
    transform: scale(0.97);
    transition: transform .2s;
-   border: 4px solid #00FFFF;
+      
+
  }
 
  .card.display {
   transform: rotateY(180deg);
+  border: 4px solid #00FFFF;
+  
 }
+
+/*.match .front {
+  background: #000 !important;
+}*/
