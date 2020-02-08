@@ -1,0 +1,97 @@
+* set up the event listener for a card. If a card is clicked:
+ *  - display the card's symbol (put this functionality in another function that you call from this one)
+ *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
+ *  - if the list already has another card, check to see if the two cards match
+ *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
+ *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
+ *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
+ *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
+ */
+
+for (initialization; condition; final expression) {
+    // code to be executed
+}
+
+let myArray = ["one", "two", "three", "four"];
+
+for(let i = 0; i < myArray.length; i++){
+
+   console.log(myArray[i]);
+
+}
+
+Hi guys,
+
+For a memory game I need to add opened card to a list of "opened" cards and then, if the list already has another card in it, I'd like to check to see if the two cards match.
+
+All my cards have the .card class and unique data-names (which ofc. come in pairs).
+
+So far I have set up an event listener for each card. I would also like my cards to be stored in:
+var openedCards = [];
+
+
+cards.forEach(card => card.addEventListener('click', cardOpen));
+
+Can anyone explain
+
+function cardOpen() {
+openedCards.push(this);
+console.log(openedCards) 
+    var len = openedCards.length;
+    if(len === 2){
+        moveCounter();
+        if(openedCards[0].type === openedCards[1].type){
+            matched();
+        } else {
+            unmatched();
+        }
+    }
+};
+
+function cardOpen() {
+openedCards.push(this);
+console.log(openedCards) 
+    var len = openedCards.length;
+    if(len === 2){  //moveCounter function is called only when openedCards.length === 2
+        moveCounter();
+            if (openedCards[0].innerHTML === openedCards[1].innerHTML){
+            cardMatch();
+        } else {
+            noMatch();
+        }
+    }
+};
+
+function moveCounter() {
+    count++;
+    if (count <= 2) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+debugger;
+
+function cardMatch(){
+   
+}
+
+
+// description when cards don't match
+function noMatch(){
+    
+}
+
+function moveCounter() {
+    count++;
+    if (count <= 2) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+debugger;

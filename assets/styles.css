@@ -1,6 +1,11 @@
 body {
 font-family: 'Press Start 2P', cursive;
   background: black;
+  /*background: url('img/rainbowroad.png');
+  background-repeat: no-repeat;
+width: 100%;
+height:100%;
+background-position: center center;*/
 }
 
 h1 {
@@ -66,6 +71,8 @@ max-width: 960px;
   
 }
 
-/*.match .front {
-  background: #000 !important;
-}*/
+.card.disabled {
+	pointer-events: none;
+	opacity: 0.9;
+}
+

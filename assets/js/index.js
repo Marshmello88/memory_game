@@ -97,51 +97,62 @@ const cards = document.querySelectorAll('.card');
 // The second parameter is the function we want to call when the event occurs
 cards.forEach(card => card.addEventListener('click', displayCard));
 cards.forEach(card => card.addEventListener('click', checkForMatch));
+//cards.forEach(card => card.addEventListener('click', lockBoard));
+
 
 
 // flipCard function gets triggered upon 
 function displayCard() {
+     if (isProcessing) { return; }
     this.classList.add('display'); //display class gets toggled, refer to css
 }
 
 // add the card to a *list* of "open" cards 
 
 var openedCards = [];
+var matchedCards = [];
 let count = 0;
+let isProcessing = false;
 
 function checkForMatch() {
     openedCards.push(this);
      console.log("openedCards = " + openedCards)
-    console.log("openedCards[0].innerHTML = " + openedCards[0].innerHTML)
-    console.log("openedCards[2].innerHTML = " + openedCards[2].innerHTML)
+    //console.log("openedCards[0].innerHTML = " + openedCards[0].innerHTML)
+    //console.log("openedCards[2].innerHTML = " + openedCards[2].innerHTML)
     if (openedCards.length > 2 && openedCards[0].innerHTML === openedCards[2].innerHTML) {
+        //(openedCards[0].isEqualNode(openedCards[2])) {
+            isProcessing = true;
         disableCards();
         return;
     } else {
         unflipCards();
+        isProcessing = false;
     }
 }
 
 
 function disableCards() {
+    console.log(disableCards);
     openedCards[0].removeEventListener('click', displayCard);
     openedCards[2].removeEventListener('click', displayCard);
+    openedCards = []; //this is not emptying the array, why?
 }
 
+
 function unflipCards() {
+    console.log(unflipCards);
     setTimeout(() => {
         openedCards[0].classList.remove('display');
         openedCards[2].classList.remove('display');
-    }, 1500);
+        openedCards = []; //empty the array
+    }, 1100);
 }
 
-function moveCounter() {
-    count++;
-    if (count <= 2) {
-        return true;
-    }
-    else {
-        return false;
-    }
+//debugger;
+
+function lockBoard(){
+    console.log(lockBoard);
+    if (openedCards.length === 2) {
+       cardsArray[i].classList.add('disabled')};
 }
 
