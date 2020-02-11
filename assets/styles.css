@@ -76,3 +76,11 @@ max-width: 960px;
 	opacity: 0.9;
 }
 
+.timer {
+display: inline-block;
+color: #fff;
+}
+
+.scoreBoard {
+margin-bottom: 10px;
+}
