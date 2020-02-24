@@ -1,15 +1,25 @@
 body {
 font-family: 'Press Start 2P', cursive;
-  background: black;
-  /*background: url('img/rainbowroad.png');
+background: black;
+/*background: url('img/pixelart.jpg');
   background-repeat: no-repeat;
 width: 100%;
 height:100%;
 background-position: center center;*/
 }
 
+.lakitu {
+    position: top left;
+    width: 200px;
+    height: 200px;
+}
+
 h1 {
     color: white;
+    display: flex; 
+flex-direction: row; 
+justify-content: center; 
+align-items: center;
 }
 
 .gameBoard {
@@ -76,11 +86,108 @@ max-width: 960px;
 	opacity: 0.9;
 }
 
-.timer {
-display: inline-block;
-color: #fff;
-}
+/*https://stackoverflow.com/questions/11063325/align-html-elements-horizontally-in-a-div*/
 
 .scoreBoard {
 margin-bottom: 10px;
+display: flex; 
+flex-direction: row; 
+justify-content: center; 
+align-items: center;
+}
+
+.moves, .reset {
+    color:#fff;
+}
+
+.timer {
+/*display: inline-block;*/
+color: #fff;
+text-align: right;
+margin: 0 1.1rem;
+}
+
+.stars {
+  list-style: none;
+  margin: 0 1.1rem;
+}
+
+.stars li {
+      display: inline-block;
+}
+
+.stars i {
+color: yellow;
+}
+
+/* -----------------------------------------------------------------*/
+
+#memorygame {
+padding-bottom: 30px;
+margin-bottom: 20px;
+}
+
+#global {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(img/rainbowroad.png) no-repeat center center fixed;
+    z-index: 2;
+    /*background: black;*/
+    overflow: hidden;
+    text-align: center;
+    background-size: cover;
+    transform: translateZ(0);
+    animation: animbg 3s ease-in-out infinite;
+}
+
+#title {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    bottom: 5%;
+    left: 0;
+    z-index: 2;
+    background: url(assets/img/lakitu.png) no-repeat center top;
+    background-size: auto 50%;
+    transform: translateZ(0);
+    animation: anim 3s ease-in-out infinite;
+}
+
+#menucontainer {
+    position: fixed;
+    bottom: auto;
+    right: 0;
+    top: 15%;
+    left: 0;
+    z-index: 2;
+}
+
+#menu {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: #4190bb;
+}
+
+#menu div {
+    padding: 0.1em 0 0 0;
+    margin: 0 0;
+    cursor: pointer;
+    text-shadow: 0 0 10px rgb(255,255,255);
+    transition: transform 0.2s ease;
+    transform: translateZ(0px) scaleY(0.8);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(255,255,255,0.5) 60%,rgba(255,255,255,0) 100%);
+}
+
+#start {
+    font-size: 1.8em;
+    color: #f66439;
 }

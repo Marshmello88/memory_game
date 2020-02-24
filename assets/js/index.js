@@ -98,6 +98,7 @@ const cards = document.querySelectorAll('.card');
 
 // the "event" object is always passed to the the event handler function
 cards.forEach(card => card.addEventListener('click', cardIsClicked));
+//cards.forEach(card => card.addEventListener('click', moveCounter));
 
 function cardIsClicked(event){
     // access the event target (the element that got clicked)
@@ -109,6 +110,8 @@ function cardIsClicked(event){
         openedCards.push(card)
         displayCard(card);
         checkForMatch()
+        moveCounter()
+        console.log(moveCounter);
     } else {
         return;
     }
@@ -162,7 +165,6 @@ function unflipCards() {
     }, 2000);
 }
 
-debugger;
 
 /*function lockBoard(){
     console.log(lockBoard);
@@ -181,7 +183,7 @@ debugger;
  //setInterval(function, milliseconds). Executes a function after milliseconds, but repeats the execution of the function continuously.
 
 //https://codepad.co/snippet/javascript-stopwatch-using-javascript-and-css
-var seconds = 0, minutes = 0; hours = 0;
+var seconds = 0, minutes = 0; hours = 0; var t;
 var timer = document.querySelector(".timer");
 
 function startTimer() {
@@ -205,9 +207,61 @@ function clock() {
 }
 clock();
 
+function stopTimer() {
+  clearInterval(timer);
+ seconds = 0;
+ minutes = 0;
+ hours = 0;
+  //time.innerHTML = `<p>0 : 00</p>`;
+}
+
+// moves
+
+var moves = 0;
+const movesX = document.querySelector('.moves');
+const stars = document.querySelector('.stars');
+
+function moveCounter() {
+        moves++;
+    movesX.innerHTML = moves;
+   loadStars();
+    return moves;
+}
+    
 
 
+function loadStars() {
+switch(moves) {
+  case 18:
+     stars.innerHTML = `<li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li>`;
+    break;
+  case 23:
+    stars.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+    break;
+    case 26:
+     stars.innerHTML = `<li><i class="fa fa-star"></i></li>`;
+    break;
+  case 30:
+    stars.innerHTML = ``;
+}
+}
 
+//modals
+//win
 
+// Function to restart the game on icon click from "https://github.com/shannonj498/memory-matching-game/blob/master/js/app.js"
+function reset() {
+  $(".reset").on("click", function() {
+      location.reload()
+  });
+  }
 
+reset();
 
+// START GAME MENU
+
+ var runGame = function(){
+        document.getElementById("start").style.display = "none";
+        document.getElementById("gamestart").style.display = "none";
+        reset();
+      };

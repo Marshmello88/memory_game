@@ -12,15 +12,48 @@
 </head>
 
 <body>
-	<div class="container">
+	<div class="container" id="main">
 		<header>
-			<h1 class="text-center"> Mario Kart memory game</h1> <br>
+			<h1 class="text-center"> Mario Kart Memory Game
+              <img class="lakitu" src="assets/img/lakitu.png"> </h1>
 		</header>
-         <div class="scoreBoard"> 
-        <div class="timer"> </div>
+<div id="gamestart">
+      <div id="global"></div>
+      <div id="title">
+      </div>
+      <div id="menucontainer">
+        <div id="menu">
+          <div id="start" onclick="runGame()">Start</div>
+          <div id="howtoplay">How to play</div>
+          <div id="username">Username</div>
         </div>
-		<div id="memorygame">
-		</div>
+      </div>
+    </div>
+			<div class="scoreBoard">
+					<ul class="stars">
+						<li>
+							<i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i>
+						</li>
+                        <li>
+							<i class="fa fa-star"></i>
+						</li>
+					</ul>
+                    <span style="color: #fff"> Move(s): </span>
+                    <span class="moves"> 0 </span>
+				<div class="timer"> </div>
+                <div class="reset">
+        		<span> Restart Game: </span><i class="fa fa-repeat"></i>
+        	</div>
+			</div>
+			<div id="memorygame">
+			</div>
+            <!-- <button onclick="play()">Play Audio</button> -->
 	</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
