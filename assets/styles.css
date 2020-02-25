@@ -9,10 +9,21 @@ background-position: center center;*/
 }
 
 .lakitu {
-    position: top left;
+    top: 15%;
+    left: 0;
     width: 200px;
     height: 200px;
+    z-index: 2;
+    transform: translateZ(0);
+    animation: anim 3s ease-in-out infinite;
 }
+
+@keyframes anim {
+  0%   { transform: translateY(10px) }
+  50% { transform: translateY(-10px) }
+  100% { transform: translateY(10px) }
+}
+
 
 h1 {
     color: white;
@@ -139,22 +150,10 @@ margin-bottom: 20px;
     overflow: hidden;
     text-align: center;
     background-size: cover;
-    transform: translateZ(0);
-    animation: animbg 3s ease-in-out infinite;
+    /*transform: translateZ(0);
+    animation: animbg 3s ease-in-out infinite;*/
 }
 
-#title {
-    position: absolute;
-    top: 5%;
-    right: 0;
-    bottom: 5%;
-    left: 0;
-    z-index: 2;
-    background: url(assets/img/lakitu.png) no-repeat center top;
-    background-size: auto 50%;
-    transform: translateZ(0);
-    animation: anim 3s ease-in-out infinite;
-}
 
 #menucontainer {
     position: fixed;
@@ -163,6 +162,7 @@ margin-bottom: 20px;
     top: 15%;
     left: 0;
     z-index: 2;
+    text-align: center; /* so that the block child will be centered, in this case its the instructions */
 }
 
 #menu {
@@ -187,7 +187,46 @@ margin-bottom: 20px;
     background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(255,255,255,0.5) 60%,rgba(255,255,255,0) 100%);
 }
 
+#menu div:hover {
+  color: #f66439;
+  transform: scaleY(1.1);
+}
+
+
 #start {
     font-size: 1.8em;
     color: #f66439;
+    transform: translateZ(0);
+}
+
+/*#howtoplay {
+             transform: translateZ(0);
+    animation: anim 3s ease-in-out infinite;
+}
+
+#username {
+             transform: translateZ(0);
+    animation: anim 3s ease-in-out infinite;
+}*/
+
+/*#title {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    bottom: 5%;
+    left: 0;*/
+
+
+
+#instructions{
+    display: none;
+        margin: auto; /* to center the block element */
+        color: orange;
+        font-size: 1.5em;
+      }
+
+#return {
+    margin-top: 30px;
+    display: none;
+    color: white;
 }

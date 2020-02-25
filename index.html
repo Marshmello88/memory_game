@@ -14,47 +14,54 @@
 <body>
 	<div class="container" id="main">
 		<header>
-			<h1 class="text-center"> Mario Kart Memory Game
-              <img class="lakitu" src="assets/img/lakitu.png"> </h1>
+			<h1 class="text-center title"> Mario Kart Memory Game
+				<!-- <img class="lakitu" src="assets/img/lakitu.png"> -->
+			</h1>
 		</header>
-<div id="gamestart">
-      <div id="global"></div>
-      <div id="title">
-      </div>
-      <div id="menucontainer">
-        <div id="menu">
-          <div id="start" onclick="runGame()">Start</div>
-          <div id="howtoplay">How to play</div>
-          <div id="username">Username</div>
-        </div>
-      </div>
-    </div>
+		<div id="gamestart">
+			<div id="global">
+                    <img class="lakitu" src="assets/img/lakitu.png">
+            </div>
+			<div id="menucontainer">
+				<div id="menu">
+					<div id="start" onclick="runGame()">Start</div>
+					<div id="howtoplay" onclick="howToPlay()">How to Play</div>
+					<div id="username">Enter Username</div>
+				</div>
+				<div id="instructions"> Turn over two cards each turn to find the matching pairs. <br>
+           You win when all the pairs have been found. <br>
+           The fewer turns you use to win, the higher the score.  </div>
+           <div id="return" onclick="backToMenu()">
+					<span> Return: </span><i class="fa fa-repeat"></i>
+				</div>
+				</div>
+			</div>
 			<div class="scoreBoard">
-					<ul class="stars">
-						<li>
-							<i class="fa fa-star"></i>
-						</li>
-						<li>
-							<i class="fa fa-star"></i>
-						</li>
-						<li>
-							<i class="fa fa-star"></i>
-						</li>
-                        <li>
-							<i class="fa fa-star"></i>
-						</li>
-					</ul>
-                    <span style="color: #fff"> Move(s): </span>
-                    <span class="moves"> 0 </span>
+				<ul class="stars">
+					<li>
+						<i class="fa fa-star"></i>
+					</li>
+					<li>
+						<i class="fa fa-star"></i>
+					</li>
+					<li>
+						<i class="fa fa-star"></i>
+					</li>
+					<li>
+						<i class="fa fa-star"></i>
+					</li>
+				</ul>
+				<span style="color: #fff"> Move(s): </span>
+				<span class="moves"> 0 </span>
 				<div class="timer"> </div>
-                <div class="reset">
-        		<span> Restart Game: </span><i class="fa fa-repeat"></i>
-        	</div>
+				<div class="reset">
+					<span> Restart Game: </span><i class="fa fa-repeat"></i>
+				</div>
 			</div>
 			<div id="memorygame">
 			</div>
-            <!-- <button onclick="play()">Play Audio</button> -->
-	</div>
+			<!-- <button onclick="play()">Play Audio</button> -->
+		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
