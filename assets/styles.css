@@ -9,13 +9,16 @@ background-position: center center;*/
 }
 
 .lakitu {
+    /*background: url("img/lakitu.png");*/
     top: 15%;
-    left: 0;
-    width: 200px;
-    height: 200px;
-    z-index: 2;
+    left: -15%;
+    width: 230px;
+    height: 230px;
+    z-index: 3;
     transform: translateZ(0);
     animation: anim 3s ease-in-out infinite;
+    position: relative;
+    float: right;
 }
 
 @keyframes anim {
@@ -145,7 +148,7 @@ margin-bottom: 20px;
     bottom: 0;
     left: 0;
     background: url(img/rainbowroad.png) no-repeat center center fixed;
-    z-index: 2;
+    z-index: 1;
     /*background: black;*/
     overflow: hidden;
     text-align: center;
@@ -222,7 +225,7 @@ margin-bottom: 20px;
     display: none;
         margin: auto; /* to center the block element */
         color: orange;
-        font-size: 1.5em;
+        font-size: 1.1em;
       }
 
 #return {
