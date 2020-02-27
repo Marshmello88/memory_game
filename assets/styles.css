@@ -28,12 +28,15 @@ background-position: center center;*/
 }
 
 
-h1 {
+.title {
     color: white;
     display: flex; 
 flex-direction: row; 
 justify-content: center; 
 align-items: center;
+text-transform: uppercase;
+padding-top: 10px;
+background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(255,255,255,0.5) 60%,rgba(255,255,255,0) 100%);
 }
 
 .gameBoard {
@@ -232,4 +235,44 @@ margin-bottom: 20px;
     margin-top: 30px;
     display: none;
     color: white;
+}
+
+.gameEnd {
+    display: none;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    text-align: center;
+    background-color: rgba(0,0,0,0.9);
+    height: 250px;
+}
+
+.congratz {
+        color: white;
+    display: flex; 
+flex-direction: row; 
+justify-content: center; 
+align-items: center;
+text-transform: uppercase;
+padding-top: 10px;
+background: linear-gradient(to right,rgba(134, 226, 213, 0) 0%,rgba(134, 226, 213, 0.5) 40%,rgba(134, 226, 213, 0.5) 60%,rgba(134, 226, 213, 0) 100%);
+text-shadow: 1px  1px 2px black, 1px -1px 2px black,-1px  1px 2px black,-1px -1px 2px black;
+}
+
+h3 {
+    color: white;
+    font-size: 1em;
+    padding: 10px;
+}
+
+.button {
+    margin: 1em;
+    background-color: transparent;
+    color:#fff;
+    text-shadow: 1px  1px 2px black, 1px -1px 2px black,-1px  1px 2px black,-1px -1px 2px black;
+
 }

@@ -14,63 +14,83 @@
 <body>
 	<div class="container" id="main">
 		<header>
-			<h1 class="text-center title"> Mario Kart Memory Game
-				<!-- <img class="lakitu" src="assets/img/lakitu.png"> -->
+			<h1 class="text-center title">
+				<span style="color: #f66439; padding-right: 25px; text-shadow: 1px  1px 2px black, 1px -1px 2px black,-1px  1px 2px black,-1px -1px 2px black;"> Mariokart </span>
+				<span style="color: white; padding-right: 25px;"> Memory </span> <span style="color: white; padding-right: 25px;"> Game </span>
 			</h1>
 		</header>
+
 		<div id="gamestart">
-			<div id="global">
-                    <img class="lakitu" src="assets/img/lakitu.png">
+			<div id="global" style="text-align:center">
+				<div>
+					<img class="lakitu" src="assets/img/lakitu.png">
             </div>
-			<div id="menucontainer">
-				<div id="menu">
-					<div id="start" onclick="runGame()">Start</div>
-					<div id="howtoplay" onclick="howToPlay()">How to Play</div>
-					<div id="username">Enter Username</div>
 				</div>
-				<div id="instructions"> Turn over two cards each turn to find the matching pairs. <br>
-           You win when all the pairs have been found. <br>
-           The fewer turns you use to win, the higher the score.  </div>
-           <div id="return" onclick="backToMenu()">
-					<span> Return: </span><i class="fa fa-repeat"></i>
+				<div id="menucontainer">
+					<div id="menu">
+						<div id="start" onclick="runGame()">Start</div>
+						<div id="howtoplay" onclick="howToPlay()">How to Play</div>
+						<div id="username">Enter Username</div>
+					</div>
+
+					<div id="instructions"> Flip two cards in order to find the matching pairs. <br>
+           Use your memory to remember what image shows up on which card. <br>
+           You've completed the game when all the cards are matched. <br>
+           The fewer turns you use, the higher the score.  </div>
+						<div id="return" onclick="backToMenu()">
+							<span> Return: </span><i class="fa fa-repeat"></i>
+						</div>
+					</div>
 				</div>
+
+				<div class="scoreBoard">
+					<ul class="stars">
+						<li>
+							<i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i>
+						</li>
+					</ul>
+					<span style="color: #fff"> Move(s): </span>
+					<span class="moves"> 0 </span>
+					<div class="timer"> </div>
+					<div class="reset">
+						<span> Restart Game: </span><i class="fa fa-repeat"></i>
+					</div>
 				</div>
+				<div id="memorygame">
+				</div>
+
+      <!-- Popup content -->
+      <div class="box" style="box-sizing: border-box;">
+      <div class="gameEnd" style="box-sizing: border-box; padding: 16px;">
+        <h1 class="congratz">Congratulations!</h1>
+        <h3>You completed the game in <span class="minutes">0</span> minutes and <span class="seconds">0</span> seconds.</h3>
+        <h3>Total moves: <span id="total-moves">0</span><span id="star-rating-text"> Star Rating: </span><span id="total-stars">0</span> out of 3</h3>
+        <button type="button" class="playAgain">
+          Play again!
+        </button>
+        </div>
+      </div>
 			</div>
-			<div class="scoreBoard">
-				<ul class="stars">
-					<li>
-						<i class="fa fa-star"></i>
-					</li>
-					<li>
-						<i class="fa fa-star"></i>
-					</li>
-					<li>
-						<i class="fa fa-star"></i>
-					</li>
-					<li>
-						<i class="fa fa-star"></i>
-					</li>
-				</ul>
-				<span style="color: #fff"> Move(s): </span>
-				<span class="moves"> 0 </span>
-				<div class="timer"> </div>
-				<div class="reset">
-					<span> Restart Game: </span><i class="fa fa-repeat"></i>
-				</div>
-			</div>
-			<div id="memorygame">
-			</div>
-			<!-- <button onclick="play()">Play Audio</button> -->
-		</div>
-	</div>
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-	</script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-	</script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-	</script>
-	<script src="assets/js/index.js"></script>
+			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+				integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+				crossorigin="anonymous">
+			</script>
+			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+				integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+				crossorigin="anonymous">
+			</script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+				integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+				crossorigin="anonymous">
+			</script>
+			<script src="assets/js/index.js"></script>
 </body>
