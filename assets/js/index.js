@@ -172,13 +172,6 @@ function unflipCards() {
        cardsArray[i].classList.add('disabled')};
 }*/
 
-//you win
- function winGame(){
-     if (matchedCards.length === 26) {
-
-     }
- }
-
  // game timer
  //setInterval(function, milliseconds). Executes a function after milliseconds, but repeats the execution of the function continuously.
 
@@ -258,10 +251,44 @@ function reset() {
 
 reset();
 
-// START GAME MENU
+// START GAME MENU https://stackoverflow.com/questions/43823180/how-to-create-a-game-menu-for-an-easy-js-game
 
  var runGame = function(){
-        document.getElementById("start").style.display = "none";
+        //document.getElementById("start").style.display = "none"; //hide the element
         document.getElementById("gamestart").style.display = "none";
+   
         reset();
       };
+
+ var howToPlay = function(){
+     document.getElementById("instructions").style.display = "block";  //shows the element as a block lvl element
+      document.getElementById("return").style.display = "block";
+       document.getElementById("menu").style.display = "none";
+     };
+
+var backToMenu = function(){
+      document.getElementById("return").style.display = "none";
+      document.getElementById("instructions").style.display = "none";
+      document.getElementById("menu").style.display = "block";
+    };
+
+    //winning modal
+
+var modal = document.document.getElementsByClassName("gameEnd")
+ function winGame(){
+     if (matchedCards.length == 24) {
+ clearInterval(timer);
+        finalTime = timer.innerHTML;
+    //show congratulations modal
+
+    modal.style.display = "block";
+
+
+  //declare star rating variable
+    var starRating = document.querySelector(".stars").innerHTML;
+    //showing move, rating, time on modal
+    document.getElementById("totalMoves").innerHTML = moves;
+    document.getElementById("totalStars").innerHTML = starRating;
+    document.getElementById("totalTime").innerHTML = finalTime;
+    };
+}
