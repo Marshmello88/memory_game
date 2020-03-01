@@ -140,6 +140,7 @@ function checkForMatch() {
         disableCards();
         //save the guessed cards
          matchedCards.push(cardValue0, cardValue1)
+         winGame();
         console.log(matchedCards);
     } else {
         unflipCards();
@@ -274,9 +275,9 @@ var backToMenu = function(){
 
     //winning modal
 
-var modal = document.document.getElementsByClassName("gameEnd")
+var modal = document.getElementsByClassName("gameEnd")[0];
  function winGame(){
-     if (matchedCards.length == 24) {
+     if (matchedCards.length == 2) {
  clearInterval(timer);
         finalTime = timer.innerHTML;
     //show congratulations modal
