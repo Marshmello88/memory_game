@@ -293,3 +293,5 @@ var modal = document.getElementsByClassName("gameEnd")[0];
     document.getElementById("totalTime").innerHTML = finalTime;
     };
 }
+
+//blablabla
