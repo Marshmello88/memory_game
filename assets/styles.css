@@ -94,7 +94,8 @@ max-width: 960px;
 
  .card.display {
   transform: rotateY(180deg);
-  border: 4px solid #00FFFF;
+  background-color: transparent;
+  /*border: 4px solid #00FFFF;*/
   
 }
 
@@ -266,7 +267,7 @@ text-shadow: 1px  1px 2px black, 1px -1px 2px black,-1px  1px 2px black,-1px -1p
 h3 {
     color: white;
     font-size: 1em;
-    padding: 10px;
+    padding: 5px;
 }
 
 .button {
@@ -274,5 +275,14 @@ h3 {
     background-color: transparent;
     color:#fff;
     text-shadow: 1px  1px 2px black, 1px -1px 2px black,-1px  1px 2px black,-1px -1px 2px black;
+
+}
+
+#totalStars {
+    list-style-type: none;
+     display: flex; 
+flex-direction: row; 
+justify-content: center; 
+align-items: center;
 
 }

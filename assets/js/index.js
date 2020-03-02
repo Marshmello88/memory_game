@@ -140,6 +140,7 @@ function checkForMatch() {
         disableCards();
         //save the guessed cards
          matchedCards.push(cardValue0, cardValue1)
+         winGame();
         console.log(matchedCards);
     } else {
         unflipCards();
@@ -190,8 +191,8 @@ function startTimer() {
         }
     }
     
-timer.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
- //timer.innerHTML = minutes + "minutes " + seconds + "seconds";
+//timer.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+ timer.textContent = minutes + " min " + seconds + " s";
     clock();
 }
 
@@ -201,10 +202,10 @@ function clock() {
 clock();
 
 function stopTimer() {
-  clearInterval(timer);
- seconds = 0;
+  clearInterval(t);
+ /*seconds = 0;
  minutes = 0;
- hours = 0;
+ hours = 0;*/
   //time.innerHTML = `<p>0 : 00</p>`;
 }
 
@@ -274,17 +275,19 @@ var backToMenu = function(){
 
     //winning modal
 
-var modal = document.document.getElementsByClassName("gameEnd")
+var modal = document.getElementsByClassName("gameEnd")[0];
  function winGame(){
-     if (matchedCards.length == 24) {
- clearInterval(timer);
-        finalTime = timer.innerHTML;
+     if (matchedCards.length == 2) {
+  stopTimer();
+  
+    var finalTime = timer.textContent + ".";
     //show congratulations modal
 
     modal.style.display = "block";
 
 
   //declare star rating variable
+  //var finalTime = document.querySelector(".timer");
     var starRating = document.querySelector(".stars").innerHTML;
     //showing move, rating, time on modal
     document.getElementById("totalMoves").innerHTML = moves;
@@ -292,3 +295,14 @@ var modal = document.document.getElementsByClassName("gameEnd")
     document.getElementById("totalTime").innerHTML = finalTime;
     };
 }
+
+function playAgain() {
+  $(".playAgain").on("click", function() {
+      location.reload()
+  });
+  }
+
+playAgain();
+
+//resetboard function need to only reset the board.
+
