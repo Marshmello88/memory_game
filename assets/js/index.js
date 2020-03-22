@@ -246,6 +246,7 @@ switch(moves) {
 // Function to restart the game on icon click from "https://github.com/shannonj498/memory-matching-game/blob/master/js/app.js"
 function reset() {
   $(".reset").on("click", function() {
+      document.getElementById("gamestart").style.display = "none";
       location.reload()
   });
   }
@@ -281,6 +282,12 @@ var modal = document.getElementsByClassName("gameEnd")[0];
   stopTimer();
   
     var finalTime = timer.textContent + ".";
+
+    //gray shit out
+
+    document.getElementById("memorygame").classList.add('grayedOut');
+    document.getElementById("titleMag").classList.add('grayedOut');
+     document.getElementById("scoreBoard").classList.add('grayedOut');
     //show congratulations modal
 
     modal.style.display = "block";
@@ -291,7 +298,7 @@ var modal = document.getElementsByClassName("gameEnd")[0];
     var starRating = document.querySelector(".stars").innerHTML;
     //showing move, rating, time on modal
     document.getElementById("totalMoves").innerHTML = moves;
-    document.getElementById("totalStars").innerHTML = starRating;
+    document.getElementById("totalStars").innerHTML = "Star rating: " + starRating;
     document.getElementById("totalTime").innerHTML = finalTime;
     };
 }
@@ -305,4 +312,32 @@ function playAgain() {
 playAgain();
 
 //resetboard function need to only reset the board.
+
+//source: https://siongui.github.io/2012/10/12/javascript-toggle-sound-onclick/
+
+function toggleSound() {
+  var marioTheme = document.getElementById('audio');
+  if (marioTheme.paused){
+marioTheme.play()
+document.querySelector('player').innerHTML='<span id="off"><i class="fas fa-volume-mute"></i></span>'
+}else{
+marioTheme.pause();
+document.querySelector('player').innerHTML='<span id="on"> <i class="fas fa-volume-up"></i></span>'
+}
+};
+
+  
+ /* if (marioTheme.paused)
+    marioTheme.play()
+  else
+    marioTheme.pause();
+}
+
+
+var soundOn = function(){
+      document.getElementById('on').style.display = "inline";
+  document.getElementById('off').style.display = "none";
+     };*/
+
+     
 

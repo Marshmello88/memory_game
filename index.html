@@ -13,10 +13,11 @@
 
 <body>
 	<div class="container" id="main">
-		<header>
+		<header id="titleMag">
 			<h1 class="text-center title">
 				<span style="color: #f66439; padding-right: 25px; text-shadow: 1px  1px 2px black, 1px -1px 2px black,-1px  1px 2px black,-1px -1px 2px black;"> Mariokart </span>
-				<span style="color: white; padding-right: 25px;"> Memory </span> <span style="color: white; padding-right: 25px;"> Game </span>
+				<span style="color: white; padding-right: 25px;"> Memory </span>
+				<span style="color: white; padding-right: 25px;"> Game </span>
 			</h1>
 		</header>
 
@@ -25,6 +26,10 @@
 				<div>
 					<img class="lakitu" src="assets/img/lakitu.png">
             </div>
+					<div id="player" onclick="javascript:toggleSound();">  Toggle sound 
+						<span id="on"> <i class="fas fa-volume-up"></i></span>
+						<span id="off"><i class="fas fa-volume-mute"></i></span>
+					</div>
 				</div>
 				<div id="menucontainer">
 					<div id="menu">
@@ -43,7 +48,7 @@
 					</div>
 				</div>
 
-				<div class="scoreBoard">
+				<div class="scoreBoard" id="scoreBoard">
 					<ul class="stars">
 						<li>
 							<i class="fa fa-star"></i>
@@ -68,18 +73,23 @@
 				<div id="memorygame">
 				</div>
 
-      <!-- Popup content -->
-      <div class="box" style="box-sizing: border-box;">
-      <div class="gameEnd" style="box-sizing: border-box; padding: 16px;">
-        <h1 class="congratz">Congratulations!</h1>
-        <h3>You completed the game in <span id="totalTime">0</span></h3>
-        <h3>Total moves: <span id="totalMoves">0</span><span id="star-rating-text" class="text-center"> <br> Star Rating: </span><span id="totalStars" class="text-center">0</span></h3>
-        <button type="button" class="playAgain" >
+				<!-- Popup content -->
+				<div class="box" style="box-sizing: border-box;">
+					<div class="gameEnd" style="box-sizing: border-box; padding: 16px;">
+						<h1 class="congratz">Congratulations!</h1>
+						<h3>You completed the game in <span id="totalTime">0</span></h3>
+						<h3>Total moves: <span id="totalMoves">0</span> <br>
+							<span id="totalStars" class="text-center"> Star rating: 0</span></h3>
+						<button type="button" class="playAgain" >
           Play again!
         </button>
-        </div>
-      </div>
+					</div>
+				</div>
 			</div>
+			<audio id="audio">
+				<source src="assets/audio/MKtheme.mp3" type="audio/mpeg">
+				Your browser does not support this audio format.
+			</audio>
 			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 				integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
 				crossorigin="anonymous">
@@ -94,4 +104,5 @@
 			</script>
 			<script src="assets/js/index.js"></script>
 </body>
+
 </html>

@@ -151,7 +151,7 @@ margin-bottom: 20px;
     right: 0;
     bottom: 0;
     left: 0;
-    background: url(img/rainbowroad.png) no-repeat center center fixed;
+    background: url(img/rainbowroad2-min.jpg) no-repeat center center fixed;
     z-index: 1;
     /*background: black;*/
     overflow: hidden;
@@ -285,4 +285,23 @@ flex-direction: row;
 justify-content: center; 
 align-items: center;
 
+}
+
+.grayedOut {
+    filter: grayscale(100%);
+}
+
+#player {
+    color: grey;
+    padding-top:15px;
+   float: left;
+   padding-left: 10px;
+}
+
+#on {
+    display: none;
+}
+
+#off {
+    
 }
