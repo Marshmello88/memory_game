@@ -135,7 +135,7 @@ let isProcessing = false;
 function checkForMatch() {
     let cardValue0 = openedCards[0].getAttribute("data-name");
     let cardValue1 = openedCards[1].getAttribute("data-name")
-
+    loseGame();
     if (cardValue0 === cardValue1) {
         disableCards();
         //save the guessed cards
@@ -317,27 +317,55 @@ playAgain();
 
 function toggleSound() {
   var marioTheme = document.getElementById('audio');
-  if (marioTheme.paused){
-marioTheme.play()
-document.querySelector('player').innerHTML='<span id="off"><i class="fas fa-volume-mute"></i></span>'
-}else{
-marioTheme.pause();
-document.querySelector('player').innerHTML='<span id="on"> <i class="fas fa-volume-up"></i></span>'
-}
+   if (marioTheme.paused) {
+    marioTheme.play()
+    document.getElementById('on').style.display = "inline-block";
+    document.getElementById('off').style.display = "none";
+  } else {
+    marioTheme.pause();
+    document.getElementById('on').style.display = "none";
+    document.getElementById('off').style.display = "inline-block";
+  }
 };
 
+//audioElement.loop=true;
+
+
+//// YOU LOSE 
+
+var modal = document.getElementsByClassName("youLose")[0];
+ function loseGame(){
+     console.log(loseGame);
+     if (movesX.innerHTML == 2) {
+         console.log(moves);
+  stopTimer();
   
- /* if (marioTheme.paused)
-    marioTheme.play()
-  else
-    marioTheme.pause();
+    var finalTime = timer.textContent + ".";
+
+    //gray shit out
+
+    document.getElementById("memorygame").classList.add('grayedOut');
+    document.getElementById("titleMag").classList.add('grayedOut');
+     document.getElementById("scoreBoard").classList.add('grayedOut');
+    //show congratulations modal
+
+    modal.style.display = "block";
+
+
+  //declare star rating variable
+  //var finalTime = document.querySelector(".timer");
+    var starRating = document.querySelector(".stars").innerHTML;
+    //showing move, rating, time on modal
+    document.getElementById("totalMoves").innerHTML = moves;
+    document.getElementById("totalStars").innerHTML = "Star rating: " + starRating;
+    document.getElementById("totalTime").innerHTML = finalTime;
+    };
 }
 
+function playAgain() {
+  $(".playAgain").on("click", function() {
+      location.reload()
+  });
+  }
 
-var soundOn = function(){
-      document.getElementById('on').style.display = "inline";
-  document.getElementById('off').style.display = "none";
-     };*/
-
-     
-
+playAgain();

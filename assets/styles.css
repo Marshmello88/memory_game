@@ -298,10 +298,24 @@ align-items: center;
    padding-left: 10px;
 }
 
-#on {
+ #on {
     display: none;
-}
+  }
 
-#off {
-    
+  #off {
+    display: inline-block;
+  }
+
+  .youLose {
+    display: none;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    text-align: center;
+    background-color: rgba(0,0,0,0.9);
+    height: 250px;
 }
