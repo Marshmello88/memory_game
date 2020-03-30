@@ -38,7 +38,7 @@ I would like to create additional themes.
 
 #UX
 For this game I have opted for a retro easthetic. I've included pixel-styled graphics and fonts. The theme of this game is Mario Kart
-Without causing too big of an argument, pixel-styled graphics is generally considered to be one of the easiest aesthetics to build. 
+
 
 #Wireframes
 
