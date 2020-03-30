@@ -135,7 +135,7 @@ let isProcessing = false;
 function checkForMatch() {
     let cardValue0 = openedCards[0].getAttribute("data-name");
     let cardValue1 = openedCards[1].getAttribute("data-name")
-    loseGame();
+   // loseGame();
     if (cardValue0 === cardValue1) {
         disableCards();
         //save the guessed cards
@@ -334,7 +334,7 @@ function toggleSound() {
 
 //// YOU LOSE 
 
-var modal = document.getElementsByClassName("youLose")[0];
+/*var modal = document.getElementsByClassName("youLose")[0];
  function loseGame(){
      if (movesX.innerHTML == 20) {
   stopTimer();
@@ -348,4 +348,4 @@ function playAgain() {
   });
   }
 
-playAgain();
+playAgain();*/

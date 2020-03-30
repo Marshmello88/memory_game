@@ -338,3 +338,40 @@ text-shadow: 1px  1px 2px red, 1px -1px 2px red,-1px  1px 2px red,-1px -1px 2px 
     color: white;
     border: 2px solid black; /* Green */
 }
+
+@media only screen and (max-width: 600px) {
+ .gameEnd {
+    top: 0;
+    bottom: 600px;
+    }
+}
+
+
+/*media only screen and (min-width: 992px) {
+    .gameEnd {
+    top: 0;
+    bottom: 600px;
+    }
+    }*/
+
+    @media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+ .gameEnd {
+    top: 0;
+    bottom: 700px;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+.gameEnd {
+    top: 0;
+    bottom: 700px;
+    }
+}
