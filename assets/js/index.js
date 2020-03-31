@@ -100,10 +100,10 @@ const cards = document.querySelectorAll('.card');
 cards.forEach(card => card.addEventListener('click', cardIsClicked));
 //cards.forEach(card => card.addEventListener('click', moveCounter));
 
-function cardIsClicked(event){
+function cardIsClicked(event) {
     // access the event target (the element that got clicked)
-    let card=event.currentTarget; 
-    if(openedCards.length == 0){
+    let card = event.currentTarget;
+    if (openedCards.length == 0) {
         displayCard(card);
         openedCards.push(card)
     } else if (openedCards.length == 1) {
@@ -134,16 +134,20 @@ let isProcessing = false;
 
 function checkForMatch() {
     let cardValue0 = openedCards[0].getAttribute("data-name");
-    let cardValue1 = openedCards[1].getAttribute("data-name")
-   // loseGame();
+    console.log(cardValue0);
+    let cardValue1 = openedCards[1].getAttribute("data-name");
+    console.log(cardValue1);
+    loseGame();
     if (cardValue0 === cardValue1) {
+        console.log("cardsAreMatching");
         disableCards();
         //save the guessed cards
-         matchedCards.push(cardValue0, cardValue1)
-         winGame();
-      
+        matchedCards.push(cardValue0, cardValue1)
+        winGame();
+
         console.log(matchedCards);
     } else {
+        console.log("cardsDoNotMatch");
         unflipCards();
         isProcessing = false;
     }
@@ -174,8 +178,8 @@ function unflipCards() {
        cardsArray[i].classList.add('disabled')};
 }*/
 
- // game timer
- //setInterval(function, milliseconds). Executes a function after milliseconds, but repeats the execution of the function continuously.
+// game timer
+//setInterval(function, milliseconds). Executes a function after milliseconds, but repeats the execution of the function continuously.
 
 //https://codepad.co/snippet/javascript-stopwatch-using-javascript-and-css
 var seconds = 0, minutes = 0; hours = 0; var t;
@@ -191,9 +195,9 @@ function startTimer() {
             hours++;
         }
     }
-    
-//timer.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
- timer.textContent = minutes + " min " + seconds + " s";
+
+    //timer.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+    timer.textContent = minutes + " min " + seconds + " s";
     clock();
 }
 
@@ -203,11 +207,11 @@ function clock() {
 clock();
 
 function stopTimer() {
-  clearInterval(t);
- /*seconds = 0;
- minutes = 0;
- hours = 0;*/
-  //time.innerHTML = `<p>0 : 00</p>`;
+    clearInterval(t);
+    /*seconds = 0;
+    minutes = 0;
+    hours = 0;*/
+    //time.innerHTML = `<p>0 : 00</p>`;
 }
 
 // moves
@@ -217,28 +221,28 @@ const movesX = document.querySelector('.moves');
 const stars = document.querySelector('.stars');
 
 function moveCounter() {
-        moves++;
+    moves++;
     movesX.innerHTML = moves;
-   loadStars();
+    loadStars();
     return moves;
 }
-    
+
 
 
 function loadStars() {
-switch(moves) {
-  case 18:
-     stars.innerHTML = `<li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li>`;
-    break;
-  case 23:
-    stars.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
-    break;
-    case 26:
-     stars.innerHTML = `<li><i class="fa fa-star"></i></li>`;
-    break;
-  case 30:
-    stars.innerHTML = ``;
-}
+    switch (moves) {
+        case 18:
+            stars.innerHTML = `<li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li>`;
+            break;
+        case 23:
+            stars.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+            break;
+        case 26:
+            stars.innerHTML = `<li><i class="fa fa-star"></i></li>`;
+            break;
+        case 30:
+            stars.innerHTML = ``;
+    }
 }
 
 //modals
@@ -246,69 +250,69 @@ switch(moves) {
 
 // Function to restart the game on icon click from "https://github.com/shannonj498/memory-matching-game/blob/master/js/app.js"
 function reset() {
-  $(".reset").on("click", function() {
-      document.getElementById("gamestart").style.display = "none";
-      location.reload()
-  });
-  }
+    $(".reset").on("click", function () {
+        document.getElementById("gamestart").style.display = "none";
+        location.reload()
+    });
+}
 
 reset();
 
 // START GAME MENU https://stackoverflow.com/questions/43823180/how-to-create-a-game-menu-for-an-easy-js-game
 
- var runGame = function(){
-        //document.getElementById("start").style.display = "none"; //hide the element
-        document.getElementById("gamestart").style.display = "none";
-   
-        reset();
-      };
+var runGame = function () {
+    //document.getElementById("start").style.display = "none"; //hide the element
+    document.getElementById("gamestart").style.display = "none";
 
- var howToPlay = function(){
-     document.getElementById("instructions").style.display = "block";  //shows the element as a block lvl element
-      document.getElementById("return").style.display = "block";
-       document.getElementById("menu").style.display = "none";
-     };
+    reset();
+};
 
-var backToMenu = function(){
-      document.getElementById("return").style.display = "none";
-      document.getElementById("instructions").style.display = "none";
-      document.getElementById("menu").style.display = "block";
-    };
+var howToPlay = function () {
+    document.getElementById("instructions").style.display = "block";  //shows the element as a block lvl element
+    document.getElementById("return").style.display = "block";
+    document.getElementById("menu").style.display = "none";
+};
 
-    //winning modal
+var backToMenu = function () {
+    document.getElementById("return").style.display = "none";
+    document.getElementById("instructions").style.display = "none";
+    document.getElementById("menu").style.display = "block";
+};
+
+//winning modal
 
 var modal = document.getElementsByClassName("gameEnd")[0];
- function winGame(){
-     if (matchedCards.length == 2) {
-  stopTimer();
-  
-    var finalTime = timer.textContent + ".";
+function winGame() {
+    if (matchedCards.length == 2) {
+        stopTimer();
 
-    //gray things out
+        var finalTime = timer.textContent + ".";
 
-    document.getElementById("memorygame").classList.add('grayedOut');
-    document.getElementById("titleMag").classList.add('grayedOut');
-     document.getElementById("scoreBoard").classList.add('grayedOut');
-    //show congratulations modal
+        //gray things out
 
-    modal.style.display = "block";
+        document.getElementById("memorygame").classList.add('grayedOut');
+        document.getElementById("titleMag").classList.add('grayedOut');
+        document.getElementById("scoreBoard").classList.add('grayedOut');
+        //show congratulations modal
+
+        modal.style.display = "block";
 
 
-  //declare star rating variable
-  //var finalTime = document.querySelector(".timer");
-    var starRating = document.querySelector(".stars").innerHTML;
-    //showing move, rating, time on modal
-    document.getElementById("totalMoves").innerHTML = moves;
-    document.getElementById("totalStars").innerHTML = "Star rating: " + starRating;
-    document.getElementById("totalTime").innerHTML = finalTime;
+        //declare star rating variable
+        //var finalTime = document.querySelector(".timer");
+        var starRating = document.querySelector(".stars").innerHTML;
+        //showing move, rating, time on modal
+        document.getElementById("totalMoves").innerHTML = moves;
+        document.getElementById("totalStars").innerHTML = "Star rating: " + starRating;
+        document.getElementById("totalTime").innerHTML = finalTime;
     };
 }
 
 function playAgain() {
-  $(".playAgain").on("click", function() {
-      location.reload()
-  });
-  }
+    $(".playAgain").on("click", function () {
+        location.reload()
+    });
+}
 
 playAgain();
 
@@ -317,16 +321,16 @@ playAgain();
 //source: https://siongui.github.io/2012/10/12/javascript-toggle-sound-onclick/
 
 function toggleSound() {
-  var marioTheme = document.getElementById('audio');
-   if (marioTheme.paused) {
-    marioTheme.play()
-    document.getElementById('on').style.display = "inline-block";
-    document.getElementById('off').style.display = "none";
-  } else {
-    marioTheme.pause();
-    document.getElementById('on').style.display = "none";
-    document.getElementById('off').style.display = "inline-block";
-  }
+    var marioTheme = document.getElementById('audio');
+    if (marioTheme.paused) {
+        marioTheme.play()
+        document.getElementById('on').style.display = "inline-block";
+        document.getElementById('off').style.display = "none";
+    } else {
+        marioTheme.pause();
+        document.getElementById('on').style.display = "none";
+        document.getElementById('off').style.display = "inline-block";
+    }
 };
 
 //audioElement.loop=true;
@@ -334,18 +338,18 @@ function toggleSound() {
 
 //// YOU LOSE 
 
-/*var modal = document.getElementsByClassName("youLose")[0];
- function loseGame(){
-     if (movesX.innerHTML == 20) {
-  stopTimer();
-    modal.style.display = "block";
+var modalTwo = document.getElementsByClassName("youLose")[0];
+function loseGame() {
+    if (moves == 20) {
+        stopTimer();
+        modalTwo.style.display = "block";
     };
 }
 
 function playAgain() {
-  $(".playAgain").on("click", function() {
-      location.reload()
-  });
-  }
+    $(".playAgain").on("click", function () {
+        location.reload()
+    });
+}
 
-playAgain();*/
+playAgain();
