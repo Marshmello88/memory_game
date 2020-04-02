@@ -98,3 +98,5 @@ None of the images are owned by me.
 Mario Kart png file source: https://favpng.com/
 Mario Kart background image: https://www.ecopetit.cat/ecvi/iwibh_screenshot/
 
+.
+
