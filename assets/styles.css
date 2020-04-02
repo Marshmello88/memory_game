@@ -366,7 +366,31 @@ text-shadow: 1px  1px 2px red, 1px -1px 2px red,-1px  1px 2px red,-1px -1px 2px 
     }
 }
 
+/* iphone 5 */
 @media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+.gameEnd {
+    top: 0;
+    bottom: 700px;
+    }
+}
+
+/* ----------- iPhone X ----------- */
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+.gameEnd {
+    top: 0;
+    bottom: 900px;
+    }
+}
+
+/*@media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2)
@@ -375,7 +399,7 @@ text-shadow: 1px  1px 2px red, 1px -1px 2px red,-1px  1px 2px red,-1px -1px 2px 
     top: 0;
     bottom: 700px;
     }
-}
+}*/
 
 @media only screen 
   and (min-device-width: 375px) 
@@ -409,6 +433,19 @@ align-items: center;
     }
 }
 
+/* ipad Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+      .gameEnd {
+    top: 0;
+    bottom: 400px;
+    }
+
+}
+
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 568px)
@@ -438,3 +475,4 @@ justify-content: center;
 align-items: center;
 }
 }
+
