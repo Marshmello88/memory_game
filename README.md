@@ -1,15 +1,19 @@
 #Mario kart memory game
+
 For Codeinstitute's Interactive Frontend Development Milestone Project.
 
 #About
+
 The Memory Game is a simple game built to test a users memory and other brain functions such as concentration, attention and focus.
 The player needs to match each pair of cards to win the game. 
 
 #What will I learn
+
 The memory game presents an opportunity to combine HTML, CSS, and JavaScript into a single project. Aside from working on these 
 three aforementioned technologies, I will also work on my DOM manipulation skills. 
 
 #How it works
+
 The board consists of twenty four cards arranged in a grid. The deck is made up of twelve different pairs of cards, each card has a 
 different image on one side. All the cards are arranged randomly on the board, the image side is facing down.
 
@@ -31,27 +35,33 @@ Requirements for the game:
  *  if the player runs out of moves, display a Game Over screen.
 
 #Technologies used
+
 CSS, Javascript and HTML, Bootstrap, Jasmine.
 
 #Stuff to add in the future
+
 Things to potentially add in the future are different themes, sound effects and various difficulty levels. 
 
 #Demo
+
 ![Memory Game screenshot](assets/img/memorygame_demo.jpg?raw=true)
 
 #UX
+
 For this game I have opted for a retro easthetic. I've included pixel-styled colorful graphics and fonts that both kids and adults
 can enjoy. The chosen theme for this memory card game is Mario Kart, therefore the accompanying characters are well recognized by everyone.
 I have also maintained the same pixelated design as well as the darker colors throughout each "page" so as to promote consistency. 
 
 
 #Wireframes
+
 The wireframes were drawn up by hand:
 ![Wireframe](assets/img/wireframe1.jpg?raw=true)
 ![Wireframe](assets/imgwireframe2.jpg?raw=true)
 
 
 #Testing
+
 I have used the following validation services to check the validity of my code:
 
 * W3C Markup Validation was used to validate HTML.
@@ -77,11 +87,13 @@ For more info: https://codecraft.tv/courses/angular/unit-testing/jasmine-and-kar
 
 
 #Deployment
+
 This site is hosted using GitHub pages: https://marshmello88.github.io/memory_game Any further updates will be automatically 
 applied whenever the local changes are pushed to the remote GitHub-hosted repo. After this, the GitHub site should update within 
 a few seconds.
 
 #Media
+
 None of the images are owned by me.
 Mario Kart png file source: https://favpng.com/
 Mario Kart background image: https://www.ecopetit.cat/ecvi/iwibh_screenshot/
