@@ -87,7 +87,4 @@ var runGame = function () {
 describe('runGame', function() {
         it('all html elements with id gamestart should have display of none', function() {
             runGame();
-            expect('#gamestart').toBe("none");
-        });
-            });
-     
+            expect('
