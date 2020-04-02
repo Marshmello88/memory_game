@@ -1,18 +1,18 @@
-#Mario kart memory game
+# Mario kart memory game
 
 For Codeinstitute's Interactive Frontend Development Milestone Project.
 
-#About
+# About
 
 The Memory Game is a simple game built to test a users memory and other brain functions such as concentration, attention and focus.
 The player needs to match each pair of cards to win the game. 
 
-#What will I learn
+# What will I learn
 
 The memory game presents an opportunity to combine HTML, CSS, and JavaScript into a single project. Aside from working on these 
 three aforementioned technologies, I will also work on my DOM manipulation skills. 
 
-#How it works
+# How it works
 
 The board consists of twenty four cards arranged in a grid. The deck is made up of twelve different pairs of cards, each card has a 
 different image on one side. All the cards are arranged randomly on the board, the image side is facing down.
@@ -34,33 +34,33 @@ Requirements for the game:
  *  if all cards have matched, display a message with the final score.
  *  if the player runs out of moves, display a Game Over screen.
 
-#Technologies used
+# Technologies used
 
 CSS, Javascript and HTML, Bootstrap, Jasmine.
 
-#Stuff to add in the future
+# Stuff to add in the future
 
 Things to potentially add in the future are different themes, sound effects and various difficulty levels. 
 
-#Demo
+# Demo
 
 ![Memory Game screenshot](assets/img/memorygame_demo.jpg?raw=true)
 
-#UX
+# UX
 
 For this game I have opted for a retro easthetic. I've included pixel-styled colorful graphics and fonts that both kids and adults
 can enjoy. The chosen theme for this memory card game is Mario Kart, therefore the accompanying characters are well recognized by everyone.
 I have also maintained the same pixelated design as well as the darker colors throughout each "page" so as to promote consistency. 
 
 
-#Wireframes
+# Wireframes
 
 The wireframes were drawn up by hand:
 ![Wireframe](assets/img/wireframe1.jpg?raw=true)
-![Wireframe](assets/imgwireframe2.jpg?raw=true)
+![Wireframe](assets/img/wireframe2.jpg?raw=true)
 
 
-#Testing
+# Testing
 
 I have used the following validation services to check the validity of my code:
 
@@ -79,20 +79,20 @@ Some of the code was tested with Jasmine after I completed the game. To do this 
 which represents a test case. In spec.js I wrote my own tests using the jasmine framework and then afterwards I ran 
 my jasmine-testing.html file. 
 
-#How to run jasmine tests
+# How to run jasmine tests
 
 To run the tests simply open up the jasmine-testing HTML file in a browser. Once all the files requested via script and link are loaded by
 a browser the function window. onload is called, this is when Jasmine actually runs the tests. 
 For more info: https://codecraft.tv/courses/angular/unit-testing/jasmine-and-karma/
 
 
-#Deployment
+# Deployment
 
 This site is hosted using GitHub pages: https://marshmello88.github.io/memory_game Any further updates will be automatically 
 applied whenever the local changes are pushed to the remote GitHub-hosted repo. After this, the GitHub site should update within 
 a few seconds.
 
-#Media
+# Media
 
 None of the images are owned by me.
 Mario Kart png file source: https://favpng.com/
