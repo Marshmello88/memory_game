@@ -36,7 +36,7 @@ Requirements for the game:
 
 # Technologies used
 
-CSS, Javascript and HTML, Bootstrap, Jasmine.
+CSS, Javascript and HTML, Bootstrap.
 
 # Stuff to add in the future
 
@@ -66,24 +66,77 @@ I have used the following validation services to check the validity of my code:
 
 * W3C Markup Validation was used to validate HTML.
 * W3C CSS validation was used to validate CSS.
-* JSHint was used to validate JavaScript.
 
-Most of my code was tested manually, some of my manual tests included:
-* clicking on cards too fast to see if I could flip multiple cards over
-* matching all cards to check whether the appropriate screen pops up
-* using up all moves to check whether the appropriate screen pops up
-* testing all refresh/reset buttons
-* toggling music on/off
+The site's functionality was manually tested. 
 
-Some of the code was tested with Jasmine after I completed the game. To do this I created a spec.js file
-which represents a test case. In spec.js I wrote my own tests using the jasmine framework and then afterwards I ran 
-my jasmine-testing.html file. 
+I. Start screen
 
-# How to run jasmine tests
+* Does each menu item increase in size/change color when hovered over? 
+   - Yes/Pass
 
-To run the tests simply open up the jasmine-testing HTML file in a browser. Once all the files requested via script and link are loaded by
-a browser the function window. onload is called, this is when Jasmine actually runs the tests. 
-For more info: https://codecraft.tv/courses/angular/unit-testing/jasmine-and-karma/
+* Does the size/color go back to the original state when onhovered?
+   - Yes/Pass
+
+* Does the sound toggle on and off?
+   - Yes/Pass
+
+* Does the how-to-play button open up a screen with instructions?
+   - Yes/Pass
+
+* Does the return button return to main menu?
+   - Yes/Pass
+
+
+
+II. Responsiveness
+
+* Does the game board behave responsively when viewed on all screen sizes? 
+   - Yes/Pass
+
+* Does the score board bar behave responsively when viewed on all screen sizes?
+   - Yes/Pass
+
+* Does the win-game screen appear in the center of the game board on all devices?
+   - Yes & No/Partial Pass
+     - Note: I have tested on the following screen sizes: Laptop with MDPI screen, Galaxy S5, Pixel 2, Pixel 2XL, iPhone 5/SE,
+     iPhone 6/7/8, iPhone X, iPad, iPad Pro, iPhone 6/7/8 plus. I have tried to center the win game pop-up on most popular devices, 
+     however on iPhone 6/7/8 plus it is slightly pushed upwards. This is due to conflict with other media queries, as such I've decided 
+     to leave it like it is on this particular set of devices.
+
+
+III. The Game itself
+
+* Does the deck lock all other cards once two cards are flipped over? 
+    - Yes/Pass
+
+* Does the win game screen appear once all cards are matched?
+    - Yes/Pass 
+
+* Does the game over screen appear once the user runs out of moves?
+    - Yes/Pass
+
+* Does the reset button reset the scoreboard and the deck? 
+    - Yes/Pass
+
+* Are the number of moves displayed correctly?
+    - Yes/Pass
+
+* Is the star rating displayed correctly?
+    - Yes/Pass
+
+IV. Modals
+
+* Does the win game screen contain the correct player stats?
+   - Yes/Pass
+
+* Does the timer stop when the pop-up appears?
+    - Yes/Pass
+
+* Is the play again button on the win game screen functional?
+   - Yes/Pass
+
+* Is the restart game button on the game over screen functional?
+   - Yes/Pass
 
 
 # Deployment
@@ -97,6 +150,4 @@ a few seconds.
 None of the images are owned by me.
 Mario Kart png file source: https://favpng.com/
 Mario Kart background image: https://www.ecopetit.cat/ecvi/iwibh_screenshot/
-
-.
 

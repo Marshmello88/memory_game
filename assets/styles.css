@@ -1,102 +1,96 @@
 body {
-font-family: 'Press Start 2P', cursive;
-background: black;
-/*background: url('img/pixelart.jpg');
-  background-repeat: no-repeat;
-width: 100%;
-height:100%;
-background-position: center center;*/
+	font-family: 'Press Start 2P', cursive;
+	background: black;
 }
 
 .lakitu {
-    /*background: url("img/lakitu.png");*/
-    top: 15%;
-    left: -15%;
-    width: 230px;
-    height: 230px;
-    z-index: 3;
-    transform: translateZ(0);
-    animation: anim 3s ease-in-out infinite;
-    position: relative;
-    float: right;
+	top: 15%;
+	left: -15%;
+	width: 230px;
+	height: 230px;
+	z-index: 3;
+	transform: translateZ(0);
+	animation: anim 3s ease-in-out infinite;
+	position: relative;
+	float: right;
 }
 
 @keyframes anim {
-  0%   { transform: translateY(10px) }
-  50% { transform: translateY(-10px) }
-  100% { transform: translateY(10px) }
+	0% {
+		transform: translateY(10px)
+	}
+	50% {
+		transform: translateY(-10px)
+	}
+	100% {
+		transform: translateY(10px)
+	}
 }
 
-
 .title {
-    color: white;
-    display: flex; 
-flex-direction: row; 
-justify-content: center; 
-align-items: center;
-text-transform: uppercase;
-padding-top: 10px;
-background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(255,255,255,0.5) 60%,rgba(255,255,255,0) 100%);
+	color: white;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	padding-top: 10px;
+	background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 100%);
 }
 
 .gameBoard {
-max-width: 960px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    /* for the 3d flip effect*/
-    perspective: 1000px;
+	max-width: 960px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	/* for the 3d flip effect*/
+	perspective: 1000px;
 }
-
 
 .front {
-   background: url('img/question.png') no-repeat center center;
-   background-size: contain;
+	background: url('img/question.png') no-repeat center center;
+	background-size: contain;
 }
-
 
 .card,
 .back,
 .front {
-  height: 150px;
-  width: 150px;
+	height: 150px;
+	width: 150px;
 }
 
 .card {
-    position: relative;
-    /*to position the cards in the 3D space created in the parent*/
-    transform-style: preserve-3d;
-    transition: transform .5s;
+	position: relative;
+	/*to position the cards in the 3D space created in the parent*/
+	transform-style: preserve-3d;
+	transition: transform .5s;
 }
 
 .back,
 .front {
-  position: absolute;
-  backface-visibility: hidden;
+	position: absolute;
+	backface-visibility: hidden;
 }
 
 .back {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  transform: rotateY(180deg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	transform: rotateY(180deg);
 }
+
 
 /* adding a click effect*/
 
 .card:active {
-   transform: scale(0.97);
-   transition: transform .2s;
-      
+	transform: scale(0.97);
+	transition: transform .2s;
+}
 
- }
-
- .card.display {
-  transform: rotateY(180deg);
-  background-color: transparent;
-  /*border: 4px solid #00FFFF;*/
-  
+.card.display {
+	transform: rotateY(180deg);
+	background-color: transparent;
 }
 
 .card.disabled {
@@ -104,375 +98,300 @@ max-width: 960px;
 	opacity: 0.9;
 }
 
-/*https://stackoverflow.com/questions/11063325/align-html-elements-horizontally-in-a-div*/
+/* centering elements: https://stackoverflow.com/questions/11063325/align-html-elements-horizontally-in-a-div*/
 
 .scoreBoard {
-margin-bottom: 10px;
-display: flex; 
-flex-direction: row; 
-justify-content: center; 
-align-items: center;
+	margin-bottom: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
-.moves, .reset {
-    color:#fff;
+.moves,
+.reset {
+	color: #fff;
 }
 
 .timer {
-/*display: inline-block;*/
-color: #fff;
-text-align: right;
-margin: 0 1.1rem;
+	color: #fff;
+	text-align: right;
+	margin: 0 1.1rem;
 }
 
 .stars {
-  list-style: none;
-  margin: 0 1.1rem;
-  padding: 0;
+	list-style: none;
+	margin: 0 1.1rem;
+	padding: 0;
 }
 
 .stars li {
-      display: inline-block;
+	display: inline-block;
 }
 
 .stars i {
-color: yellow;
+	color: yellow;
 }
-
-/* -----------------------------------------------------------------*/
-
-/* #memorygame {
-padding-bottom: 30px;
-margin-bottom: 20px;
-} */
 
 #global {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: url(img/rainbowroad2-min.jpg) no-repeat center center fixed;
-    z-index: 1;
-    /*background: black;*/
-    overflow: hidden;
-    text-align: center;
-    background-size: cover;
-    /*transform: translateZ(0);
-    animation: animbg 3s ease-in-out infinite;*/
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: url(img/rainbowroad2-min.jpg) no-repeat center center fixed;
+	z-index: 1;
+	overflow: hidden;
+	text-align: center;
+	background-size: cover;
 }
 
-
 #menucontainer {
-    position: fixed;
-    bottom: auto;
-    right: 0;
-    top: 15%;
-    left: 0;
-    z-index: 2;
-    text-align: center; /* so that the block child will be centered, in this case its the instructions */
+	position: fixed;
+	bottom: auto;
+	right: 0;
+	top: 15%;
+	left: 0;
+	z-index: 2;
+	text-align: center;
 }
 
 #menu {
-    position: relative;
-    display: block;
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
-    font-size: 2em;
-    text-transform: uppercase;
-    color: #4190bb;
+	position: relative;
+	display: block;
+	width: 100%;
+	max-width: 600px;
+	margin: auto;
+	text-align: center;
+	font-size: 2em;
+	text-transform: uppercase;
+	color: #4190bb;
 }
 
 #menu div {
-    padding: 0.1em 0 0 0;
-    margin: 0 0;
-    cursor: pointer;
-    text-shadow: 0 0 10px rgb(255,255,255);
-    transition: transform 0.2s ease;
-    transform: translateZ(0px) scaleY(0.8);
-    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(255,255,255,0.5) 60%,rgba(255,255,255,0) 100%);
+	padding: 0.1em 0 0 0;
+	margin: 0 0;
+	cursor: pointer;
+	text-shadow: 0 0 10px rgb(255, 255, 255);
+	transition: transform 0.2s ease;
+	transform: translateZ(0px) scaleY(0.8);
+	background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 100%);
 }
 
 #menu div:hover {
-  color: #f66439;
-  transform: scaleY(1.1);
+	color: #f66439;
+	transform: scaleY(1.1);
 }
-
 
 #start {
-    font-size: 1.8em;
-    color: #f66439;
-    transform: translateZ(0);
+	font-size: 1.8em;
+	color: #f66439;
+	transform: translateZ(0);
 }
 
-/*#howtoplay {
-             transform: translateZ(0);
-    animation: anim 3s ease-in-out infinite;
+#instructions {
+	display: none;
+	margin: auto;
+	/* to center the block element */
+	color: orange;
+	font-size: 1.1em;
 }
-
-#username {
-             transform: translateZ(0);
-    animation: anim 3s ease-in-out infinite;
-}*/
-
-/*#title {
-    position: absolute;
-    top: 5%;
-    right: 0;
-    bottom: 5%;
-    left: 0;*/
-
-
-
-#instructions{
-    display: none;
-        margin: auto; /* to center the block element */
-        color: orange;
-        font-size: 1.1em;
-      }
 
 #return {
-    margin-top: 30px;
-    display: none;
-    color: white;
+	margin-top: 30px;
+	display: none;
+	color: white;
 }
 
 .gameEnd {
-    display: none;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 4;
-    text-align: center;
-    background-color: rgba(0,0,0,0.9);
-    height: 250px;
+	display: none;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 4;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.9);
+	height: 250px;
 }
 
 .congratz {
-        color: white;
-    display: flex; 
-flex-direction: row; 
-justify-content: center; 
-align-items: center;
-text-transform: uppercase;
-padding-top: 10px;
-background: linear-gradient(to right,rgba(134, 226, 213, 0) 0%,rgba(134, 226, 213, 0.5) 40%,rgba(134, 226, 213, 0.5) 60%,rgba(134, 226, 213, 0) 100%);
-text-shadow: 1px  1px 2px black, 1px -1px 2px black,-1px  1px 2px black,-1px -1px 2px black;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	padding-top: 10px;
+	background: linear-gradient(to right, rgba(134, 226, 213, 0) 0%, rgba(134, 226, 213, 0.5) 40%, rgba(134, 226, 213, 0.5) 60%, rgba(134, 226, 213, 0) 100%);
+	text-shadow: 1px 1px 2px black, 1px -1px 2px black, -1px 1px 2px black, -1px -1px 2px black;
 }
 
 h3 {
-    color: white;
-    font-size: 1em;
-    padding: 5px;
+	color: white;
+	font-size: 1em;
+	padding: 5px;
 }
 
 .button {
-    margin: 1em;
-    background-color: transparent;
-    color:#fff;
-    text-shadow: 1px  1px 2px black, 1px -1px 2px black,-1px  1px 2px black,-1px -1px 2px black;
-
+	margin: 1em;
+	background-color: transparent;
+	color: #fff;
+	text-shadow: 1px 1px 2px black, 1px -1px 2px black, -1px 1px 2px black, -1px -1px 2px black;
 }
 
 #totalStars {
-    list-style-type: none;
-     display: flex; 
-flex-direction: row; 
-justify-content: center; 
-align-items: center;
-
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 .grayedOut {
-    filter: grayscale(100%);
+	filter: grayscale(100%);
 }
 
 #player {
-    color: grey;
-    padding-top:15px;
-   float: left;
-   padding-left: 10px;
+	color: grey;
+	padding-top: 15px;
+	float: left;
+	padding-left: 10px;
 }
 
- #on {
-    display: none;
-  }
+#on {
+	display: none;
+}
 
-  #off {
-    display: inline-block;
-  }
+#off {
+	display: inline-block;
+}
 
-  .youLose {
-    display: none;
-    z-index: 4;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: black;
- 
+.youLose {
+	display: none;
+	z-index: 4;
+	text-align: center;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: black;
 }
 
 .gameOver {
-    font-size: 70px;
-        color: yellow;
-    display: flex; 
-flex-direction: row; 
-justify-content: center; 
-align-items: center;
-text-transform: uppercase;
-padding-top: 160px; /*is there a better way to achieve this */
-
-text-shadow: 1px  1px 2px red, 1px -1px 2px red,-1px  1px 2px red,-1px -1px 2px red;
+	font-size: 70px;
+	color: yellow;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	padding-top: 160px;
+	text-shadow: 1px 1px 2px red, 1px -1px 2px red, -1px 1px 2px red, -1px -1px 2px red;
 }
 
 #loseButton {
-    margin-top: 100px;
-    background-color: black;
-    color: white;
-    border: 2px solid black; /* Green */
+	margin-top: 100px;
+	background-color: black;
+	color: white;
+	border: 2px solid black;
+	/* Green */
 }
 
 @media only screen and (max-width: 600px) {
- .gameEnd {
-    top: 0;
-    bottom: 600px;
-    }
+	.gameEnd {
+		top: 0;
+		bottom: 600px;
+	}
 }
 
-
-/*media only screen and (min-width: 992px) {
-    .gameEnd {
-    top: 0;
-    bottom: 600px;
-    }
-    }*/
-
-    @media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: portrait) { 
- .gameEnd {
-    top: 0;
-    bottom: 700px;
-    }
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+	.gameEnd {
+		top: 0;
+		bottom: 700px;
+	}
 }
+
 
 /* iphone 5 */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-.gameEnd {
-    top: 0;
-    bottom: 700px;
-    }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+	.gameEnd {
+		top: 0;
+		bottom: 700px;
+	}
 }
+
 
 /* ----------- iPhone X ----------- */
 
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: portrait) { 
-.gameEnd {
-    top: 0;
-    bottom: 900px;
-    }
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+	.gameEnd {
+		top: 0;
+		bottom: 900px;
+	}
 }
 
-/*@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) { 
-.gameEnd {
-    top: 0;
-    bottom: 700px;
-    }
-}*/
 
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: portrait) { 
- .stars {
-     list-style: none;
-  margin: 0 1.1rem;
-  padding: 0;
-      display: flex; 
-flex-direction: row; 
-justify-content: center; 
-align-items: center;
-    }
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+	.stars {
+		list-style: none;
+		margin: 0 1.1rem;
+		padding: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) { 
-.stars {
-     list-style: none;
-  margin: 0 1.1rem;
-  padding: 0;
-      display: flex; 
-flex-direction: row; 
-justify-content: center; 
-align-items: center;
-    }
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+	.stars {
+		list-style: none;
+		margin: 0 1.1rem;
+		padding: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
 }
+
 
 /* ipad Portrait */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: portrait) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-      .gameEnd {
-    top: 0;
-    bottom: 400px;
-    }
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+	.gameEnd {
+		top: 0;
+		bottom: 400px;
+	}
 }
 
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-.stars {
-     list-style: none;
-  margin: 0 1.1rem;
-  padding: 0;
-      display: flex; 
-flex-direction: row; 
-justify-content: center; 
-align-items: center;
-}
-  }
-
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-.stars {
-     list-style: none;
-  margin: 0 1.1rem;
-  padding: 0;
-      display: flex; 
-flex-direction: row; 
-justify-content: center; 
-align-items: center;
-}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+	.stars {
+		list-style: none;
+		margin: 0 1.1rem;
+		padding: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+	.stars {
+		list-style: none;
+		margin: 0 1.1rem;
+		padding: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+/* sources: http://hexgl.bkcore.com/play/ */

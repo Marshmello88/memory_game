@@ -1,55 +1,55 @@
+// Sources listed below
+
 //array of objects
 const cardsArray = [{
-    'name': 'angrymario',
-    'img': 'assets/img/angrymario.png',
-},
-{
-    'name': 'banana',
-    'img': 'assets/img/banana.png',
-},
-{
-    'name': 'cloudguy',
-    'img': 'assets/img/cloudguy.png',
-},
-{
-    'name': 'coin',
-    'img': 'assets/img/coin.png',
-},
-{
-    'name': 'kong',
-    'img': 'assets/img/kong.png',
-},
-{
-    'name': 'luigi',
-    'img': 'assets/img/luigi.png',
-},
-{
-    'name': 'mario',
-    'img': 'assets/img/mario.png',
-},
-{
-    'name': 'mushroom',
-    'img': 'assets/img/mushroom.png',
-},
-{
-    'name': 'mushroomboy',
-    'img': 'assets/img/mushroomboy.png',
-},
-{
-    'name': 'peach',
-    'img': 'assets/img/peach.png',
-},
-{
-    'name': 'shyguy',
-    'img': 'assets/img/shyguy.png',
-},
-{
-    'name': 'yoshi',
-    'img': 'assets/img/yoshi.png',
-}
+        'name': 'angrymario',
+        'img': 'assets/img/angrymario.png',
+    },
+    {
+        'name': 'banana',
+        'img': 'assets/img/banana.png',
+    },
+    {
+        'name': 'cloudguy',
+        'img': 'assets/img/cloudguy.png',
+    },
+    {
+        'name': 'coin',
+        'img': 'assets/img/coin.png',
+    },
+    {
+        'name': 'kong',
+        'img': 'assets/img/kong.png',
+    },
+    {
+        'name': 'luigi',
+        'img': 'assets/img/luigi.png',
+    },
+    {
+        'name': 'mario',
+        'img': 'assets/img/mario.png',
+    },
+    {
+        'name': 'mushroom',
+        'img': 'assets/img/mushroom.png',
+    },
+    {
+        'name': 'mushroomboy',
+        'img': 'assets/img/mushroomboy.png',
+    },
+    {
+        'name': 'peach',
+        'img': 'assets/img/peach.png',
+    },
+    {
+        'name': 'shyguy',
+        'img': 'assets/img/shyguy.png',
+    },
+    {
+        'name': 'yoshi',
+        'img': 'assets/img/yoshi.png',
+    }
 ];
-
-
 
 
 // CREATING A GRID
@@ -62,14 +62,16 @@ const gameGrid = cardsArray
 const memorygame = document.getElementById('memorygame')
 const gameBoard = document.createElement('section')
 gameBoard.setAttribute('class', 'gameBoard')
-// gameBoard.setAttribute('onclick', 'checkForMatch(this);');
 
 // Append the section to the memorygame div
 memorygame.appendChild(gameBoard);
 
 
 gameGrid.forEach(item => {
-    const { name, img } = item;
+    const {
+        name,
+        img
+    } = item;
 
     const card = document.createElement('div');
     card.classList.add('card');
@@ -87,7 +89,7 @@ gameGrid.forEach(item => {
     card.appendChild(back);
 });
 
-//FLIPPIN' CARDS
+//FLIPPING CARDS
 
 //select all card elements
 const cards = document.querySelectorAll('.card');
@@ -116,7 +118,6 @@ function cardIsClicked(event) {
         return;
     }
 }
-
 
 
 // flipCard function gets triggered upon 
@@ -182,7 +183,10 @@ function unflipCards() {
 //setInterval(function, milliseconds). Executes a function after milliseconds, but repeats the execution of the function continuously.
 
 //https://codepad.co/snippet/javascript-stopwatch-using-javascript-and-css
-var seconds = 0, minutes = 0; hours = 0; var t;
+var seconds = 0,
+    minutes = 0;
+hours = 0;
+var t;
 var timer = document.querySelector(".timer");
 
 function startTimer() {
@@ -249,31 +253,45 @@ function loadStars() {
 //win
 
 // Function to restart the game on icon click from "https://github.com/shannonj498/memory-matching-game/blob/master/js/app.js"
+// function reset() {
+//     $(".reset").on("click", function () {
+//         document.getElementById("gamestart").style.display = "none";
+//         location.reload()
+//     });
+// }
+
+// reset();
+
+// Reset game items
 function reset() {
-    $(".reset").on("click", function () {
-        document.getElementById("gamestart").style.display = "none";
-        location.reload()
-    });
+    stopTimer();
+    var openedCards = [];
+    var matchedCards = [];
+    card.classList.add('display');
+    shuffle(deck);
+    moves = 0;
+    moves.innerHTML = 0;
+    stars.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
 }
 
-reset();
+
 
 // START GAME MENU https://stackoverflow.com/questions/43823180/how-to-create-a-game-menu-for-an-easy-js-game
 
-var runGame = function () {
+var runGame = function() {
     //document.getElementById("start").style.display = "none"; //hide the element
     document.getElementById("gamestart").style.display = "none";
 
-    reset();
+    //reset();
 };
 
-var howToPlay = function () {
-    document.getElementById("instructions").style.display = "block";  //shows the element as a block lvl element
+var howToPlay = function() {
+    document.getElementById("instructions").style.display = "block"; //shows the element as a block lvl element
     document.getElementById("return").style.display = "block";
     document.getElementById("menu").style.display = "none";
 };
 
-var backToMenu = function () {
+var backToMenu = function() {
     document.getElementById("return").style.display = "none";
     document.getElementById("instructions").style.display = "none";
     document.getElementById("menu").style.display = "block";
@@ -282,6 +300,7 @@ var backToMenu = function () {
 //winning modal
 
 var modal = document.getElementsByClassName("gameEnd")[0];
+
 function winGame() {
     if (matchedCards.length == 2) {
         stopTimer();
@@ -309,7 +328,7 @@ function winGame() {
 }
 
 function playAgain() {
-    $(".playAgain").on("click", function () {
+    $(".playAgain").on("click", function() {
         location.reload()
     });
 }
@@ -339,17 +358,32 @@ function toggleSound() {
 //// YOU LOSE 
 
 var modalTwo = document.getElementsByClassName("youLose")[0];
+
 function loseGame() {
-    if (moves == 20) {
+    if (moves == 6) {
         stopTimer();
         modalTwo.style.display = "block";
     };
 }
 
 function playAgain() {
-    $(".playAgain").on("click", function () {
+    $(".playAgain").on("click", function() {
         location.reload()
     });
 }
 
 playAgain();
+
+/* Sources:
+https://marina-ferreira.github.io/tutorials/js/memory-game/
+https://github.com/optimistanoop/memory-game
+https://scotch.io/tutorials/how-to-build-a-memory-matching-game-in-javascript
+https://github.com/sandraisrael/Memory-Game-fend
+https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
+https://github.com/JavaVista/Project-Memory-Game
+http://hexgl.bkcore.com/play/
+https://tympanus.net/codrops/2013/11/07/css-overlay-techniques/
+https://github.com/shannonj498/memory-matching-game/blob/master/js/app.js
+https://siongui.github.io/2012/10/12/javascript-toggle-sound-onclick
+https://stackoverflow.com/questions/43823180/how-to-create-a-game-menu-for-an-easy-js-game
+https://codepad.co/snippet/javascript-stopwatch-using-javascript-and-css*/
