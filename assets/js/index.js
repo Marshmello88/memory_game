@@ -267,8 +267,6 @@ function reset() {
     stopTimer();
     var openedCards = [];
     var matchedCards = [];
-    card.classList.add('display');
-    shuffle(deck);
     moves = 0;
     moves.innerHTML = 0;
     stars.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
@@ -295,6 +293,20 @@ var backToMenu = function() {
     document.getElementById("return").style.display = "none";
     document.getElementById("instructions").style.display = "none";
     document.getElementById("menu").style.display = "block";
+    document.getElementById("credits").style.display = "none";
+};
+
+var creditScreen = function() {
+    document.getElementById("credits").style.display = "block"; //shows the element as a block lvl element
+    document.getElementById("return").style.display = "block";
+    document.getElementById("menu").style.display = "none";
+};
+
+var backToMenu = function() {
+    document.getElementById("return").style.display = "none";
+    document.getElementById("instructions").style.display = "none";
+    document.getElementById("menu").style.display = "block";
+    document.getElementById("credits").style.display = "none";
 };
 
 //winning modal
