@@ -3,6 +3,9 @@ body {
 	background: black;
 }
 
+
+/* source for the floating animation: http://hexgl.bkcore.com/play/ */
+
 .lakitu {
 	top: 15%;
 	left: -15%;
@@ -62,7 +65,6 @@ body {
 
 .card {
 	position: relative;
-	/*to position the cards in the 3D space created in the parent*/
 	transform-style: preserve-3d;
 	transition: transform .5s;
 }
@@ -97,6 +99,7 @@ body {
 	pointer-events: none;
 	opacity: 0.9;
 }
+
 
 /* centering elements: https://stackoverflow.com/questions/11063325/align-html-elements-horizontally-in-a-div*/
 
@@ -168,6 +171,9 @@ body {
 	color: #4190bb;
 }
 
+
+/* Source for the awesome animations: http://hexgl.bkcore.com/play/ */
+
 #menu div {
 	padding: 0.1em 0 0 0;
 	margin: 0 0;
@@ -189,10 +195,14 @@ body {
 	transform: translateZ(0);
 }
 
+#credits {
+	display: none;
+	color: orange;
+}
+
 #instructions {
 	display: none;
 	margin: auto;
-	/* to center the block element */
 	color: orange;
 	font-size: 1.1em;
 }
@@ -298,8 +308,10 @@ h3 {
 	background-color: black;
 	color: white;
 	border: 2px solid black;
-	/* Green */
 }
+
+
+/* media queries for standard devices https://css-tricks.com/snippets/css/media-queries-for-standard-devices/ */
 
 @media only screen and (max-width: 600px) {
 	.gameEnd {
@@ -315,9 +327,6 @@ h3 {
 	}
 }
 
-
-/* iphone 5 */
-
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
 	.gameEnd {
 		top: 0;
@@ -325,16 +334,12 @@ h3 {
 	}
 }
 
-
-/* ----------- iPhone X ----------- */
-
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
 	.gameEnd {
 		top: 0;
 		bottom: 900px;
 	}
 }
-
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
 	.stars {
@@ -359,9 +364,6 @@ h3 {
 		align-items: center;
 	}
 }
-
-
-/* ipad Portrait */
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
 	.gameEnd {
@@ -394,4 +396,17 @@ h3 {
 	}
 }
 
-/* sources: http://hexgl.bkcore.com/play/ */
+/* Sources:
+
+https://marina-ferreira.github.io/tutorials/js/memory-game/
+https://github.com/optimistanoop/memory-game
+https://scotch.io/tutorials/how-to-build-a-memory-matching-game-in-javascript
+https://github.com/sandraisrael/Memory-Game-fend
+https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
+https://github.com/JavaVista/Project-Memory-Game
+http://hexgl.bkcore.com/play/
+https://tympanus.net/codrops/2013/11/07/css-overlay-techniques/
+https://github.com/shannonj498/memory-matching-game/blob/master/js/app.js
+https://siongui.github.io/2012/10/12/javascript-toggle-sound-onclick
+https://stackoverflow.com/questions/43823180/how-to-create-a-game-menu-for-an-easy-js-game
+https://codepad.co/snippet/javascript-stopwatch-using-javascript-and-css*/

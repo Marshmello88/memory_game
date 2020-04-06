@@ -17,7 +17,7 @@ three aforementioned technologies, I will also work on my DOM manipulation skill
 The board consists of twenty four cards arranged in a grid. The deck is made up of twelve different pairs of cards, each card has a 
 different image on one side. All the cards are arranged randomly on the board, the image side is facing down.
 
-The user has to flip two cards at a time in order to find a matching pair. The game can be reset at any moment, simply by clicking on the
+The user has to flip two cards at a time in order to find a matching pair. The game can be restarted at any moment, simply by clicking on the
 reset icon in the top right corner of the screen. Once all the cards have been matched, the winning screen appears with a summary of the 
 users'game stats (how many moves, time passed and star rating). If the game is not won within a certain amount of moves, a "game over"
 screen appears instead. The user can then choose to play again by clicking on the play button.
@@ -36,7 +36,7 @@ Requirements for the game:
 
 # Technologies used
 
-CSS, Javascript and HTML, Bootstrap.
+CSS, Javascript and HTML.
 
 # Stuff to add in the future
 
@@ -78,7 +78,8 @@ I. Start screen
    - Yes/Pass
 
 * Does the sound toggle on and off?
-   - Yes/Pass
+   - Yes & No/Partial Pass
+        - Currently you can only toggle it on and off on the main screen. Additional button needs to be added on the game screen.
 
 * Does the how-to-play button open up a screen with instructions?
    - Yes/Pass
@@ -86,7 +87,11 @@ I. Start screen
 * Does the return button return to main menu?
    - Yes/Pass
 
+* Does the credits button display credits screen?
+    - Yes/Pass
 
+* Does the return button return to main menu?
+   - Yes/Pass
 
 II. Responsiveness
 
@@ -116,7 +121,8 @@ III. The Game itself
     - Yes/Pass
 
 * Does the reset button reset the scoreboard and the deck? 
-    - Yes/Pass
+    - Yes & No/Partial Pass
+        - Technically it does, however I would have preferred a simple reset function for this. This is something to add in the future.
 
 * Are the number of moves displayed correctly?
     - Yes/Pass
@@ -135,7 +141,7 @@ IV. Modals
 * Is the play again button on the win game screen functional?
    - Yes/Pass
 
-* Is the restart game button on the game over screen functional?
+* Is the play again button on the game over screen functional?
    - Yes/Pass
 
 

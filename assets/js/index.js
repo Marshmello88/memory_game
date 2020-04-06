@@ -1,69 +1,70 @@
 // Sources listed below
 
-//array of objects
 const cardsArray = [{
-        'name': 'angrymario',
-        'img': 'assets/img/angrymario.png',
-    },
-    {
-        'name': 'banana',
-        'img': 'assets/img/banana.png',
-    },
-    {
-        'name': 'cloudguy',
-        'img': 'assets/img/cloudguy.png',
-    },
-    {
-        'name': 'coin',
-        'img': 'assets/img/coin.png',
-    },
-    {
-        'name': 'kong',
-        'img': 'assets/img/kong.png',
-    },
-    {
-        'name': 'luigi',
-        'img': 'assets/img/luigi.png',
-    },
-    {
-        'name': 'mario',
-        'img': 'assets/img/mario.png',
-    },
-    {
-        'name': 'mushroom',
-        'img': 'assets/img/mushroom.png',
-    },
-    {
-        'name': 'mushroomboy',
-        'img': 'assets/img/mushroomboy.png',
-    },
-    {
-        'name': 'peach',
-        'img': 'assets/img/peach.png',
-    },
-    {
-        'name': 'shyguy',
-        'img': 'assets/img/shyguy.png',
-    },
-    {
-        'name': 'yoshi',
-        'img': 'assets/img/yoshi.png',
-    }
+    'name': 'angrymario',
+    'img': 'assets/img/angrymario.png',
+},
+{
+    'name': 'banana',
+    'img': 'assets/img/banana.png',
+},
+{
+    'name': 'cloudguy',
+    'img': 'assets/img/cloudguy.png',
+},
+{
+    'name': 'coin',
+    'img': 'assets/img/coin.png',
+},
+{
+    'name': 'kong',
+    'img': 'assets/img/kong.png',
+},
+{
+    'name': 'luigi',
+    'img': 'assets/img/luigi.png',
+},
+{
+    'name': 'mario',
+    'img': 'assets/img/mario.png',
+},
+{
+    'name': 'mushroom',
+    'img': 'assets/img/mushroom.png',
+},
+{
+    'name': 'mushroomboy',
+    'img': 'assets/img/mushroomboy.png',
+},
+{
+    'name': 'peach',
+    'img': 'assets/img/peach.png',
+},
+{
+    'name': 'shyguy',
+    'img': 'assets/img/shyguy.png',
+},
+{
+    'name': 'yoshi',
+    'img': 'assets/img/yoshi.png',
+}
 ];
 
 
-// CREATING A GRID
+//Creating a grid
 
 const gameGrid = cardsArray
     .concat(cardsArray)
     .sort(() => 0.5 - Math.random());
 
-//Accessing the memorygame div in HTML. Create a section with a class of gameBoard.
+// Create a section with a class of gameBoard
+
 const memorygame = document.getElementById('memorygame')
 const gameBoard = document.createElement('section')
 gameBoard.setAttribute('class', 'gameBoard')
 
 // Append the section to the memorygame div
+
 memorygame.appendChild(gameBoard);
 
 
@@ -89,18 +90,14 @@ gameGrid.forEach(item => {
     card.appendChild(back);
 });
 
-//FLIPPING CARDS
 
-//select all card elements
+// Select all card elements
+
 const cards = document.querySelectorAll('.card');
 
 // loop through them with forEach and attach event listener 
-//The first parameter is the type of the event (like "click" or "mousedown" or any other HTML DOM Event.)
-// The second parameter is the function we want to call when the event occurs
 
-// the "event" object is always passed to the the event handler function
 cards.forEach(card => card.addEventListener('click', cardIsClicked));
-//cards.forEach(card => card.addEventListener('click', moveCounter));
 
 function cardIsClicked(event) {
     // access the event target (the element that got clicked)
@@ -111,8 +108,8 @@ function cardIsClicked(event) {
     } else if (openedCards.length == 1) {
         openedCards.push(card)
         displayCard(card);
-        checkForMatch()
         moveCounter()
+        checkForMatch()
         console.log(moveCounter);
     } else {
         return;
@@ -120,18 +117,18 @@ function cardIsClicked(event) {
 }
 
 
-// flipCard function gets triggered upon 
-function displayCard(card) {
-    //  if (isProcessing) { return; }
-    card.classList.add('display'); //display class gets toggled, refer to css
-}
+// displayCard function gets called when a card is clicked
 
-// add the card to a *list* of "open" cards 
+function displayCard(card) {
+    card.classList.add('display');
+}
 
 var openedCards = [];
 var matchedCards = [];
 let count = 0;
 let isProcessing = false;
+
+// Clicked cards are added to a *list* of "open" cards and are compared for match. If both match, the pair is added to matchedCards array
 
 function checkForMatch() {
     let cardValue0 = openedCards[0].getAttribute("data-name");
@@ -145,7 +142,6 @@ function checkForMatch() {
         //save the guessed cards
         matchedCards.push(cardValue0, cardValue1)
         winGame();
-
         console.log(matchedCards);
     } else {
         console.log("cardsDoNotMatch");
@@ -159,7 +155,7 @@ function disableCards() {
     console.log(disableCards);
     openedCards[0].removeEventListener('click', displayCard);
     openedCards[1].removeEventListener('click', displayCard);
-    openedCards = []; //this is not emptying the array, why?
+    openedCards = [];
 }
 
 
@@ -168,21 +164,12 @@ function unflipCards() {
     setTimeout(() => {
         openedCards[0].classList.remove('display');
         openedCards[1].classList.remove('display');
-        openedCards = []; //empty the array
+        openedCards = [];
     }, 2000);
 }
 
+// Timer: https://codepad.co/snippet/javascript-stopwatch-using-javascript-and-css
 
-/*function lockBoard(){
-    console.log(lockBoard);
-    if (openedCards.length === 2) {
-       cardsArray[i].classList.add('disabled')};
-}*/
-
-// game timer
-//setInterval(function, milliseconds). Executes a function after milliseconds, but repeats the execution of the function continuously.
-
-//https://codepad.co/snippet/javascript-stopwatch-using-javascript-and-css
 var seconds = 0,
     minutes = 0;
 hours = 0;
@@ -199,8 +186,7 @@ function startTimer() {
             hours++;
         }
     }
-
-    //timer.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+    // timer.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
     timer.textContent = minutes + " min " + seconds + " s";
     clock();
 }
@@ -212,10 +198,6 @@ clock();
 
 function stopTimer() {
     clearInterval(t);
-    /*seconds = 0;
-    minutes = 0;
-    hours = 0;*/
-    //time.innerHTML = `<p>0 : 00</p>`;
 }
 
 // moves
@@ -226,83 +208,71 @@ const stars = document.querySelector('.stars');
 
 function moveCounter() {
     moves++;
+    console.log(moves);
     movesX.innerHTML = moves;
     loadStars();
     return moves;
 }
 
 
+// stars
 
 function loadStars() {
     switch (moves) {
         case 18:
             stars.innerHTML = `<li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li>`;
             break;
-        case 23:
+        case 25:
             stars.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
             break;
-        case 26:
+        case 30:
             stars.innerHTML = `<li><i class="fa fa-star"></i></li>`;
             break;
-        case 30:
+        case 35:
             stars.innerHTML = ``;
     }
 }
 
-//modals
-//win
 
-// Function to restart the game on icon click from "https://github.com/shannonj498/memory-matching-game/blob/master/js/app.js"
-// function reset() {
-//     $(".reset").on("click", function () {
-//         document.getElementById("gamestart").style.display = "none";
-//         location.reload()
-//     });
-// }
-
-// reset();
-
-// Reset game items
+// Function to restart the game: "https://github.com/shannonj498/memory-matching-game/blob/master/js/app.js"
 function reset() {
-    stopTimer();
-    var openedCards = [];
-    var matchedCards = [];
-    moves = 0;
-    moves.innerHTML = 0;
-    stars.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+    $(".reset").on("click", function () {
+        document.getElementById("gamestart").style.display = "none";
+        location.reload()
+    });
 }
 
+reset();
 
 
-// START GAME MENU https://stackoverflow.com/questions/43823180/how-to-create-a-game-menu-for-an-easy-js-game
+// game start menu: https://stackoverflow.com/questions/43823180/how-to-create-a-game-menu-for-an-easy-js-game
 
-var runGame = function() {
-    //document.getElementById("start").style.display = "none"; //hide the element
+var runGame = function () {
     document.getElementById("gamestart").style.display = "none";
 
-    //reset();
+    reset();
 };
 
-var howToPlay = function() {
-    document.getElementById("instructions").style.display = "block"; //shows the element as a block lvl element
+var howToPlay = function () {
+    document.getElementById("instructions").style.display = "block";
     document.getElementById("return").style.display = "block";
     document.getElementById("menu").style.display = "none";
 };
 
-var backToMenu = function() {
+var backToMenu = function () {
     document.getElementById("return").style.display = "none";
     document.getElementById("instructions").style.display = "none";
     document.getElementById("menu").style.display = "block";
     document.getElementById("credits").style.display = "none";
 };
 
-var creditScreen = function() {
-    document.getElementById("credits").style.display = "block"; //shows the element as a block lvl element
+var creditScreen = function () {
+    document.getElementById("credits").style.display = "block";
     document.getElementById("return").style.display = "block";
     document.getElementById("menu").style.display = "none";
 };
 
-var backToMenu = function() {
+var backToMenu = function () {
     document.getElementById("return").style.display = "none";
     document.getElementById("instructions").style.display = "none";
     document.getElementById("menu").style.display = "block";
@@ -314,23 +284,18 @@ var backToMenu = function() {
 var modal = document.getElementsByClassName("gameEnd")[0];
 
 function winGame() {
-    if (matchedCards.length == 2) {
+    if (matchedCards.length == 24) {
         stopTimer();
 
         var finalTime = timer.textContent + ".";
 
         //gray things out
-
         document.getElementById("memorygame").classList.add('grayedOut');
         document.getElementById("titleMag").classList.add('grayedOut');
         document.getElementById("scoreBoard").classList.add('grayedOut');
-        //show congratulations modal
 
         modal.style.display = "block";
 
-
-        //declare star rating variable
-        //var finalTime = document.querySelector(".timer");
         var starRating = document.querySelector(".stars").innerHTML;
         //showing move, rating, time on modal
         document.getElementById("totalMoves").innerHTML = moves;
@@ -340,16 +305,15 @@ function winGame() {
 }
 
 function playAgain() {
-    $(".playAgain").on("click", function() {
+    $(".playAgain").on("click", function () {
         location.reload()
     });
 }
 
 playAgain();
 
-//resetboard function need to only reset the board.
 
-//source: https://siongui.github.io/2012/10/12/javascript-toggle-sound-onclick/
+// Sound: https://siongui.github.io/2012/10/12/javascript-toggle-sound-onclick/
 
 function toggleSound() {
     var marioTheme = document.getElementById('audio');
@@ -364,22 +328,20 @@ function toggleSound() {
     }
 };
 
-//audioElement.loop=true;
 
-
-//// YOU LOSE 
+// Game Over
 
 var modalTwo = document.getElementsByClassName("youLose")[0];
 
 function loseGame() {
-    if (moves == 6) {
+    if (moves == 35) {
         stopTimer();
         modalTwo.style.display = "block";
     };
 }
 
 function playAgain() {
-    $(".playAgain").on("click", function() {
+    $(".playAgain").on("click", function () {
         location.reload()
     });
 }
@@ -387,6 +349,7 @@ function playAgain() {
 playAgain();
 
 /* Sources:
+
 https://marina-ferreira.github.io/tutorials/js/memory-game/
 https://github.com/optimistanoop/memory-game
 https://scotch.io/tutorials/how-to-build-a-memory-matching-game-in-javascript

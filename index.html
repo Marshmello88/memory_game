@@ -1,109 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <title>Memory game by Maggy</title>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-      <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
-      <script src="https://kit.fontawesome.com/046a8e7919.js" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="assets/styles.css">
-   </head>
-   <body>
-      <div class="container" id="main">
-         <header id="titleMag">
-            <h1 class="text-center title">
-               <span style="color: #f66439; padding-right: 25px; text-shadow: 1px  1px 2px black, 1px -1px 2px black,-1px  1px 2px black,-1px -1px 2px black;"> Mariokart </span>
-               <span style="color: white; padding-right: 25px;"> Memory </span>
-               <span style="color: white; padding-right: 25px;"> Game </span>
-            </h1>
-         </header>
-         <div id="gamestart">
-            <div id="global" style="text-align:center">
-               <div>
-                  <img class="lakitu" src="assets/img/lakitu.png" alt="floating lakitu">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Memory game by Maggy</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/046a8e7919.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+	<div class="container" id="main">
+		<header id="titleMag">
+			<h1 class="text-center title">
+				<span style="color: #f66439; padding-right: 25px; text-shadow: 1px  1px 2px black, 1px -1px 2px black,-1px  1px 2px black,-1px -1px 2px black;"> Mariokart </span>
+				<span style="color: white; padding-right: 25px;"> Memory </span>
+				<span style="color: white; padding-right: 25px;"> Game </span>
+			</h1>
+		</header>
+		<div id="gamestart">
+			<div id="global" style="text-align:center">
+				<div>
+					<img class="lakitu" src="assets/img/lakitu.png" alt="floating lakitu">
                </div>
-               <div id="player" onclick="javascript:toggleSound();"> Toggle sound
-                  <span id="on"> <i class="fas fa-volume-up"></i></span>
-                  <span id="off"><i class="fas fa-volume-mute"></i></span>
-               </div>
-            </div>
-            <div id="menucontainer">
-               <div id="menu">
-                  <div id="start" onclick="runGame()">Start</div>
-                  <div id="howtoplay" onclick="howToPlay()">How to Play</div>
-                  <div id="username">Credits</div>
-               </div>
-               <div id="instructions"> Flip two cards in order to find the matching pairs. <br>
+					<div id="player" onclick="javascript:toggleSound();"> Toggle sound
+						<span id="on"> <i class="fas fa-volume-up"></i></span>
+						<span id="off"><i class="fas fa-volume-mute"></i></span>
+					</div>
+				</div>
+				<div id="menucontainer">
+					<div id="menu">
+						<div id="start" onclick="runGame()">Start</div>
+						<div id="howtoplay" onclick="howToPlay()">How to Play</div>
+						<div id="username" onclick="creditScreen()">Credits</div>
+					</div>
+					<div id="instructions"> Flip two cards in order to find the matching pairs. <br>
                   Use your memory to remember what image shows up on which card. <br>
                   You've completed the game when all the cards are matched. <br>
-                  The fewer turns you use, the higher the score.  
+                  The fewer turns you use, the higher the score.
                </div>
-               <div id="return" onclick="backToMenu()">
-                  <span> Return: </span><i class="fa fa-repeat"></i>
-               </div>
-            </div>
-         </div>
-         <div class="scoreBoard" id="scoreBoard">
-            <ul class="stars">
-               <li>
-                  <i class="fa fa-star"></i>
-               </li>
-               <li>
-                  <i class="fa fa-star"></i>
-               </li>
-               <li>
-                  <i class="fa fa-star"></i>
-               </li>
-               <li>
-                  <i class="fa fa-star"></i>
-               </li>
-            </ul>
-            <span style="color: #fff"> Move(s): </span>
-            <span class="moves"> 0 </span>
-            <div class="timer"> </div>
-            <div class="reset">
-               <span> Restart Game: </span><i class="fa fa-repeat"></i>
-            </div>
-         </div>
-         <div id="memorygame">
-         </div>
-         <!-- Popup content for win game -->
-         <div class="box" style="box-sizing: border-box;">
-            <div class="gameEnd" style="box-sizing: border-box; padding: 16px;">
-               <h1 class="congratz">Congratulations!</h1>
-               <h3>You completed the game in <span id="totalTime">0</span></h3>
-               <h3>Total moves: <span id="totalMoves">0</span> <br>
-                  <span id="totalStars" class="text-center"> Star rating: 0</span>
-               </h3>
-               <button type="button" class="playAgain" >
+						<div id="credits"> A game by Margarita :) </div>
+						<div id="return" onclick="backToMenu()">
+							<span> Return: </span><i class="fa fa-repeat"></i>
+						</div>
+					</div>
+				</div>
+				<div class="scoreBoard" id="scoreBoard">
+					<ul class="stars">
+						<li>
+							<i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i>
+						</li>
+					</ul>
+					<span style="color: #fff"> Move(s): </span>
+					<span class="moves"> 0 </span>
+					<div class="timer"> </div>
+					<div class="reset">
+						<span> Restart Game: </span><i class="fa fa-repeat"></i>
+					</div>
+				</div>
+				<div id="memorygame">
+				</div>
+				<!-- Popup content for win game -->
+				<div class="box" style="box-sizing: border-box;">
+					<div class="gameEnd" style="box-sizing: border-box; padding: 16px;">
+						<h1 class="congratz">Congratulations!</h1>
+						<h3>You completed the game in <span id="totalTime">0</span></h3>
+						<h3>Total moves: <span id="totalMoves">0</span> <br>
+							<span id="totalStars" class="text-center"> Star rating: 0</span>
+						</h3>
+						<button type="button" class="playAgain" >
                Play again!
                </button>
-            </div>
-         </div>
-         <!-- Popup content for game over-->
-         <div class="overlay">
-            <div class="youLose" style="box-sizing: border-box; padding: 16px;">
-               <h1 class="gameOver">Game Over!</h1>
-               <button type="button" class="playAgain" id="loseButton" >
+					</div>
+				</div>
+				<!-- Popup content for game over-->
+				<div class="overlay">
+					<div class="youLose" style="box-sizing: border-box; padding: 16px;">
+						<h1 class="gameOver">Game Over!</h1>
+						<button type="button" class="playAgain" id="loseButton" >
                Play again?
                </button>
-            </div>
-         </div>
-      </div>
-      <audio id="audio" loop>
-         <source src="assets/audio/MKtheme.mp3" type="audio/mpeg">
-         Your browser does not support this audio format.
-      </audio>
-      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-         crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-         crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-         crossorigin="anonymous"></script>
-      <script src="assets/js/index.js"></script>
-   </body>
+					</div>
+				</div>
+			</div>
+			<audio id="audio" loop>
+				<source src="assets/audio/MKtheme.mp3" type="audio/mpeg">
+				Your browser does not support this audio format.
+			</audio>
+			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+				integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+				crossorigin="anonymous"></script>
+			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+				integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+				crossorigin="anonymous"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+				integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+				crossorigin="anonymous"></script>
+			<script src="assets/js/index.js"></script>
+</body>
+
 </html>
